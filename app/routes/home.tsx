@@ -1,6 +1,6 @@
+import { useState } from "react";
 import Navbar from "~/components/Navbar";
 import type { Route } from "./+types/home";
-import { resumes } from "constants";
 import ResumeCard from "~/components/ResumeCard";
 
 export function meta({}: Route.MetaArgs) {
@@ -10,10 +10,12 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
+const Home = () => {
+  const [resumes, setResumes] = useState<Resume[]>([]);
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover">
       <Navbar />
+      {window.puter.auth()}
       <section className="main-section">
         <div className="page-heading">
           <h1>Analyze Your Resume</h1>
@@ -32,4 +34,6 @@ export default function Home() {
       </section>
     </main>
   );
-}
+};
+
+export default Home;
