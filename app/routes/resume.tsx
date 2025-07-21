@@ -6,7 +6,7 @@ import { usePuterStore } from "~/lib/putter";
 import Summary from "~/components/Summary";
 
 export const meta = () => [
-  { title: "Resumind | Review " },
+  { title: "AI Resume Analyzer | Review " },
   { name: "description", content: "Detailed overview of your resume" },
 ];
 
@@ -86,7 +86,11 @@ const Resume = () => {
               <Details feedback={feedback} />
             </div>
           ) : (
-            <img src="/images/resume-scan-2.gif" className="w-full" />
+            <img
+              src="/images/resume-scan-2.gif"
+              className="w-full"
+              alt="Resume scanning animation"
+            />
           )}
         </section>
       </div>

@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import ScoreCircle from "./ScoreCircle";
+import { usePuterStore } from "~/lib/putter";
 
 const ResumeCard = ({
   resume: { id, companyName, jobTitle, feedback, imagePath },
 }: {
   resume: Resume;
 }) => {
+  const { fs } = usePuterStore();
   const [resumeUrl, setResumeUrl] = useState("");
+
+  useEffect(() => {
+    const loadResume = async () => {
+      const blob = await fs.read(imagePath);
+      if (!blob) return;
+      let url = URL.createObjectURL(blob);
+      setResumeUrl(url);
+    };
+
+    loadResume();
+  }, [imagePath]);
   return (
     <Link
       to={`/resume/${id}`}

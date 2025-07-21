@@ -7,6 +7,11 @@ import { prepareInstructions } from "../../constants";
 import { usePuterStore } from "~/lib/putter";
 import { convertPdfToImage } from "~/lib/PdfToImage";
 
+export const meta = () => [
+  { title: "AI Resume Analyzer | Upload " },
+  { name: "description", content: "Upload your resume for analysis" },
+];
+
 const Upload = () => {
   const { auth, isLoading, fs, ai, kv } = usePuterStore();
   const navigate = useNavigate();
@@ -102,7 +107,11 @@ const Upload = () => {
           {isProcessing ? (
             <>
               <h2>{statusText}</h2>
-              <img src="/images/resume-scan.gif" className="w-full" />
+              <img
+                src="/images/resume-scan.gif"
+                className="w-full"
+                alt="Resume scanning animation"
+              />
             </>
           ) : (
             <h2>Drop your resume for an ATS score and improvement tips</h2>

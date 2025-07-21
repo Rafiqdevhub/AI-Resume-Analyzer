@@ -7,7 +7,7 @@ import { usePuterStore } from "~/lib/putter";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Resumind" },
+    { title: "AI Resume Analyzer" },
     { name: "description", content: "Smart feedback for your dream job!" },
   ];
 }
@@ -54,7 +54,11 @@ export default function Home() {
         </div>
         {loadingResumes && (
           <div className="flex flex-col items-center justify-center">
-            <img src="/images/resume-scan-2.gif" className="w-[200px]" />
+            <img
+              src="/images/resume-scan-2.gif"
+              className="w-[200px]"
+              alt="Scanning resume animation"
+            />
           </div>
         )}
 
