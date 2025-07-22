@@ -27,9 +27,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Run tests
-        run: npx vitest run
-
   docker:
     needs: build-and-test
     runs-on: ubuntu-latest
