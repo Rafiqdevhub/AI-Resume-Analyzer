@@ -14,8 +14,8 @@ const ScoreBadge = ({ score }: { score: number }) => {
         score > 69
           ? "bg-badge-green"
           : score > 39
-          ? "bg-badge-yellow"
-          : "bg-badge-red"
+            ? "bg-badge-yellow"
+            : "bg-badge-red"
       )}
     >
       <img
@@ -29,8 +29,8 @@ const ScoreBadge = ({ score }: { score: number }) => {
           score > 69
             ? "text-badge-green-text"
             : score > 39
-            ? "text-badge-yellow-text"
-            : "text-badge-red-text"
+              ? "text-badge-yellow-text"
+              : "text-badge-red-text"
         )}
       >
         {score}/100

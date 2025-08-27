@@ -6,8 +6,8 @@ import { usePuterStore } from "~/lib/putter";
 import Summary from "~/components/Summary";
 
 export const meta = () => [
-  { title: "AI Resume Analyzer | Review " },
-  { name: "description", content: "Detailed overview of your resume" },
+  { title: "Resume Review" },
+  { name: "description", content: "Check out the detailed analysis of your resume." },
 ];
 
 const Resume = () => {
@@ -56,7 +56,7 @@ const Resume = () => {
         <Link to="/" className="back-button">
           <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
           <span className="text-gray-800 text-sm font-semibold">
-            Back to Homepage
+            Back to Dashboard
           </span>
         </Link>
       </nav>
@@ -75,7 +75,7 @@ const Resume = () => {
           )}
         </section>
         <section className="feedback-section">
-          <h2 className="text-4xl !text-black font-bold">Resume Review</h2>
+          <h2 className="text-4xl !text-black font-bold">Your Resume Analysis</h2>
           {feedback ? (
             <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
               <Summary feedback={feedback} />
@@ -89,7 +89,7 @@ const Resume = () => {
             <img
               src="/images/resume-scan-2.gif"
               className="w-full"
-              alt="Resume scanning animation"
+              alt="Analyzing your resume..."
             />
           )}
         </section>

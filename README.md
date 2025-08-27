@@ -1,55 +1,55 @@
-# AI Resume Analyzer
+# AI-Powered Resume Analyzer
 
-AI Resume Analyzer is a web application that provides smart, AI-powered feedback on resumes to help users improve their chances of landing their dream job. The app analyzes resumes for ATS (Applicant Tracking System) compatibility, tone & style, content, structure, and skills, offering actionable suggestions and ratings.
+This web application provides intelligent, AI-driven feedback on resumes to help users enhance their job application materials. The app evaluates resumes based on ATS (Applicant Tracking System) compatibility, tone and style, content quality, structure, and relevant skills, delivering actionable advice and ratings.
 
-## Features
+## Key Features
 
-- **Resume Upload & Management:** Users can upload, view, and track multiple resumes.
-- **AI-Powered Feedback:** Get detailed feedback and scores for ATS, tone & style, content, structure, and skills.
-- **Visual Ratings:** See scores and suggestions in a visually engaging format.
-- **Authentication:** Secure sign-in and user management.
-- **File Storage:** Store and manage resume files and images.
-- **Data Wipe:** Option to clear all user data and files.
+- **Resume Management:** Upload, manage, and track multiple resumes with ease.
+- **AI-Driven Feedback:** Receive in-depth feedback and scores for ATS, tone and style, content, structure, and skills.
+- **Visualized Ratings:** View scores and recommendations in an intuitive, visually appealing format.
+- **Secure Authentication:** Safe and secure user sign-in and management.
+- **File Handling:** Store and manage resume files and associated images.
+- **Data Management:** Option to wipe all user data and files from the system.
 
-## Tech Stack
+## Technology Stack
 
-- **React Router** for navigation
-- **Vite** for fast development and build
-- **Tailwind CSS** for styling
-- **Custom AI Integration** via `puter` API
-- **TypeScript** for type safety
+- **React Router:** for seamless navigation
+- **Vite:** for rapid development and optimized builds
+- **Tailwind CSS:** for modern and responsive styling
+- **Custom AI Integration:** via the `puter` API
+- **TypeScript:** for robust, type-safe code
 
-## Usage
+## Getting Started
 
-1. **Install dependencies:**
+1. **Install Dependencies:**
    ```sh
    npm ci
    ```
-2. **Start development server:**
+2. **Run the Development Server:**
    ```sh
    npm run dev
    ```
-3. **Build for production:**
+3. **Create a Production Build:**
    ```sh
    npm run build
    ```
-4. **Run in Docker:**
-   See the provided `Dockerfile` for multi-stage builds and production setup.
+4. **Deploy with Docker:**
+   Refer to the provided `Dockerfile` for multi-stage builds and production deployment.
 
-## Project Structure
+## Project Layout
 
 ```
 ├── app/
-│   ├── components/        # UI components (Accordion, ATS, Details, etc.)
-│   ├── lib/               # Utility libraries (putter, PdfToImage, utils)
-│   ├── routes/            # Route components (auth, home, resume, upload, wipe)
-│   ├── app.css            # Main styles
+│   ├── components/        # Reusable UI components (e.g., Accordion, ATS, Details)
+│   ├── lib/               # Core libraries and utilities (e.g., puter, PdfToImage)
+│   ├── routes/            # Page components for different routes (e.g., auth, home, resume)
+│   ├── app.css            # Global stylesheets
 │   └── ...
-├── constants/             # Static data and AI response formats
-├── public/                # Static assets (icons, images)
-├── types/                 # TypeScript type definitions
-├── Dockerfile             # Docker setup
-├── package.json           # Project metadata and scripts
-├── vite.config.ts         # Vite configuration
-└── README.md              # Project documentation
+├── constants/             # Static data, configurations, and AI response formats
+├── public/                # Publicly accessible assets (e.g., icons, images)
+├── types/                 # TypeScript type definitions and interfaces
+├── Dockerfile             # Configuration for Docker builds
+├── package.json           # Project dependencies and scripts
+├── vite.config.ts         # Configuration for Vite
+└── README.md              # This documentation file
 ```
