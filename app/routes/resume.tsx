@@ -7,7 +7,10 @@ import Summary from "~/components/Summary";
 
 export const meta = () => [
   { title: "Resume Review" },
-  { name: "description", content: "Check out the detailed analysis of your resume." },
+  {
+    name: "description",
+    content: "Check out the detailed analysis of your resume.",
+  },
 ];
 
 const Resume = () => {
@@ -44,7 +47,6 @@ const Resume = () => {
       setImageUrl(imageUrl);
 
       setFeedback(data.feedback);
-      console.log({ resumeUrl, imageUrl, feedback: data.feedback });
     };
 
     loadResume();
@@ -75,7 +77,9 @@ const Resume = () => {
           )}
         </section>
         <section className="feedback-section">
-          <h2 className="text-4xl !text-black font-bold">Your Resume Analysis</h2>
+          <h2 className="text-4xl !text-black font-bold">
+            Your Resume Analysis
+          </h2>
           {feedback ? (
             <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
               <Summary feedback={feedback} />
