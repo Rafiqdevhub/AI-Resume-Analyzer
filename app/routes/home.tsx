@@ -8,7 +8,10 @@ import { usePuterStore } from "~/lib/putter";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "AI Resume Analyzer" },
-    { name: "description", content: "Smart feedback for your dream job!" },
+    {
+      name: "description",
+      content: "A smart job title generator for your dream job",
+    },
   ];
 }
 
