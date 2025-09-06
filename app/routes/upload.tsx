@@ -8,12 +8,12 @@ import { usePuterStore } from "~/lib/putter";
 import { convertPdfToImage } from "~/lib/PdfToImage";
 
 export const meta = () => [
-  { title: "AI Resume Analyzer | Upload " },
+  { title: "TalentTrack AI | Upload " },
   { name: "description", content: "Upload your resume for analysis" },
 ];
 
 const Upload = () => {
-  const { auth, isLoading, fs, ai, kv } = usePuterStore();
+  const { fs, ai, kv } = usePuterStore();
   const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
   const [statusText, setStatusText] = useState("");
