@@ -7,7 +7,7 @@ import { usePuterStore } from "~/lib/putter";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "AI Resume Analyzer" },
+    { title: "TalentTrack AI" },
     {
       name: "description",
       content: "A smart job title generator for your dream job",
