@@ -13,41 +13,78 @@ async function loadPdfJs(): Promise<any> {
   if (loadPromise) return loadPromise;
 
   isLoading = true;
-  // @ts-expect-error - pdfjs-dist/build/pdf.mjs is not a module
-  loadPromise = import("pdfjs-dist/build/pdf.mjs").then((lib) => {
-    // Set the worker source to use local file
-    lib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+  try {
+    // @ts-expect-error - pdfjs-dist/build/pdf.mjs is not a module
+    const lib = await import("pdfjs-dist/build/pdf.mjs");
+    // Set the worker source to use the same version as the library
+    lib.GlobalWorkerOptions.workerSrc = new URL(
+      "pdfjs-dist/build/pdf.worker.mjs",
+      import.meta.url
+    ).toString();
     pdfjsLib = lib;
     isLoading = false;
     return lib;
-  });
-
-  return loadPromise;
+  } catch (error) {
+    console.error("Failed to load PDF.js:", error);
+    isLoading = false;
+    loadPromise = null;
+    throw new Error("PDF.js library failed to load");
+  }
 }
 
 export async function convertPdfToImage(
   file: File
 ): Promise<PdfConversionResult> {
   try {
+    // Validate input file
+    if (!file) {
+      throw new Error("No file provided");
+    }
+
+    if (
+      file.type !== "application/pdf" &&
+      !file.name.toLowerCase().endsWith(".pdf")
+    ) {
+      throw new Error("File is not a PDF");
+    }
+
+    console.log("Loading PDF.js library...");
     const lib = await loadPdfJs();
 
+    console.log("Converting file to ArrayBuffer...");
     const arrayBuffer = await file.arrayBuffer();
-    const pdf = await lib.getDocument({ data: arrayBuffer }).promise;
-    const page = await pdf.getPage(1);
 
+    console.log("Loading PDF document...");
+    const pdf = await lib.getDocument({ data: arrayBuffer }).promise;
+
+    console.log(`PDF loaded with ${pdf.numPages} pages`);
+
+    if (pdf.numPages === 0) {
+      throw new Error("PDF has no pages");
+    }
+
+    const page = await pdf.getPage(1);
     const viewport = page.getViewport({ scale: 4 });
+
+    console.log(
+      `Rendering page with dimensions: ${viewport.width}x${viewport.height}`
+    );
+
     const canvas = document.createElement("canvas");
     const context = canvas.getContext("2d");
+
+    if (!context) {
+      throw new Error("Failed to get canvas 2D context");
+    }
 
     canvas.width = viewport.width;
     canvas.height = viewport.height;
 
-    if (context) {
-      context.imageSmoothingEnabled = true;
-      context.imageSmoothingQuality = "high";
-    }
+    context.imageSmoothingEnabled = true;
+    context.imageSmoothingQuality = "high";
 
-    await page.render({ canvasContext: context!, viewport }).promise;
+    console.log("Rendering PDF page to canvas...");
+    await page.render({ canvasContext: context, viewport }).promise;
 
     return new Promise((resolve) => {
       canvas.toBlob(
@@ -76,10 +113,12 @@ export async function convertPdfToImage(
       ); // Set quality to maximum (1.0)
     });
   } catch (err) {
+    console.error("PDF conversion error:", err);
+    const errorMessage = err instanceof Error ? err.message : "Unknown error";
     return {
       imageUrl: "",
       file: null,
-      error: `Failed to convert PDF: ${err}`,
+      error: `Failed to convert PDF to image: ${errorMessage}`,
     };
   }
 }
