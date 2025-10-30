@@ -14,16 +14,14 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
         viewBox="0 0 100 100"
         className="transform -rotate-90"
       >
-        {/* Background circle */}
         <circle
           cx="50"
           cy="50"
           r={normalizedRadius}
-          stroke="#e5e7eb"
+          stroke="#374151"
           strokeWidth={stroke}
           fill="transparent"
         />
-        {/* Partial circle with gradient */}
         <defs>
           <linearGradient id="grad" x1="1" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#FF97AD" />
@@ -42,10 +40,8 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
           strokeLinecap="round"
         />
       </svg>
-
-      {/* Score and issues */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="font-semibold text-sm">{`${score}/100`}</span>
+        <span className="font-semibold text-sm text-gray-100">{`${score}/100`}</span>
       </div>
     </div>
   );

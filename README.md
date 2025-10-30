@@ -53,3 +53,90 @@ This web application provides intelligent, AI-driven feedback on resumes to help
 ├── vite.config.ts         # Configuration for Vite
 └── README.md              # This documentation file
 ```
+
+# File Tree: JobPsych ai-resume-analayzer
+
+```
+├── 📁 .github
+│   └── 📁 workflows
+│       └── ⚙️ pipline.yml
+├── 📁 .react-router
+│   └── 📁 types
+│       ├── 📁 app
+│       │   ├── 📁 +types
+│       │   │   └── 📄 root.ts
+│       │   └── 📁 routes
+│       │       └── 📁 +types
+│       │           ├── 📄 auth.ts
+│       │           ├── 📄 home.ts
+│       │           ├── 📄 resume.ts
+│       │           ├── 📄 upload.ts
+│       │           └── 📄 wipe.ts
+│       ├── 📄 +future.ts
+│       ├── 📄 +routes.ts
+│       └── 📄 +server-build.d.ts
+├── 📁 app
+│   ├── 📁 components
+│   │   ├── 📄 ATS.tsx
+│   │   ├── 📄 Accordion.tsx
+│   │   ├── 📄 Details.tsx
+│   │   ├── 📄 FileUploader.tsx
+│   │   ├── 📄 Navbar.tsx
+│   │   ├── 📄 ResumeCard.tsx
+│   │   ├── 📄 ScoreBadge.tsx
+│   │   ├── 📄 ScoreCircle.tsx
+│   │   ├── 📄 ScoreGuage.tsx
+│   │   └── 📄 Summary.tsx
+│   ├── 📁 lib
+│   │   ├── 📄 PdfToImage.ts
+│   │   ├── 📄 putter.ts
+│   │   └── 📄 utils.ts
+│   ├── 📁 routes
+│   │   ├── 📄 auth.tsx
+│   │   ├── 📄 home.tsx
+│   │   ├── 📄 resume.tsx
+│   │   ├── 📄 upload.tsx
+│   │   └── 📄 wipe.tsx
+│   ├── 🎨 app.css
+│   ├── 📄 root.tsx
+│   └── 📄 routes.ts
+├── 📁 constants
+│   └── 📄 index.ts
+├── 📁 public
+│   ├── 📁 icons
+│   │   ├── 🖼️ ats-bad.svg
+│   │   ├── 🖼️ ats-good.svg
+│   │   ├── 🖼️ ats-warning.svg
+│   │   ├── 🖼️ back.svg
+│   │   ├── 🖼️ check.svg
+│   │   ├── 🖼️ cross.svg
+│   │   ├── 🖼️ info.svg
+│   │   ├── 🖼️ pin.svg
+│   │   └── 🖼️ warning.svg
+│   ├── 📁 images
+│   │   ├── 🖼️ bg-auth.svg
+│   │   ├── 🖼️ bg-main.svg
+│   │   ├── 🖼️ bg-small.svg
+│   │   ├── 🖼️ pdf.png
+│   │   ├── 🖼️ resume-scan-2.gif
+│   │   ├── 🖼️ resume-scan.gif
+│   │   ├── 🖼️ resume_01.png
+│   │   ├── 🖼️ resume_02.png
+│   │   └── 🖼️ resume_03.png
+│   ├── 📄 favicon.ico
+│   └── 📄 pdf.worker.min.mjs
+├── 📁 types
+│   ├── 📄 index.d.ts
+│   └── 📄 putter.d.ts
+├── ⚙️ .dockerignore
+├── ⚙️ .gitignore
+├── 🐳 Dockerfile
+├── 📝 README.md
+├── ⚙️ package-lock.json
+├── ⚙️ package.json
+├── 📄 react-router.config.ts
+├── ⚙️ tsconfig.json
+└── 📄 vite.config.ts
+```
+
+---

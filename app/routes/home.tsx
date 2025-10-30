@@ -7,7 +7,7 @@ import { usePuterStore } from "~/lib/putter";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "TalentTrack AI - Smart Resume Analysis" },
+    { title: "JobPsych ATS - Smart Resume Analysis" },
     {
       name: "description",
       content:
@@ -39,7 +39,7 @@ export default function Home() {
 
   if (auth.isAuthenticated) {
     return (
-      <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+      <main className="bg-gray-900">
         <Navbar />
         <section className="main-section">
           <div className="page-heading py-16">
@@ -84,7 +84,7 @@ export default function Home() {
   }
 
   return (
-    <main className="bg-[url('/images/bg-main.svg')] bg-cover min-h-screen">
+    <main className="bg-gray-900">
       <section className="main-section">
         <div className="page-heading py-20">
           <h1 className="max-w-4xl mx-auto">
@@ -99,56 +99,50 @@ export default function Home() {
             <Link to="/auth?next=/upload" className="auth-button">
               Get Started
             </Link>
-            <Link
-              to="/auth?next=/"
-              className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full font-semibold text-white hover:bg-white/20 transition-all duration-300"
-            >
-              Sign In
-            </Link>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white/95 backdrop-blur-md">
+      <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-100 mb-4">
               Why Choose TalentTrack AI?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Our AI-powered platform provides comprehensive resume analysis to
               give you the competitive edge.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h3 className="text-xl font-semibold text-gray-100 mb-4">
                 ATS Optimization
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 Get detailed analysis of how well your resume performs with
                 Applicant Tracking Systems. Our AI identifies keywords,
                 formatting issues, and optimization opportunities.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h3 className="text-xl font-semibold text-gray-100 mb-4">
                 Comprehensive Scoring
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 Receive detailed scores across multiple categories including
                 content quality, structure, skills presentation, and overall
                 effectiveness.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h3 className="text-xl font-semibold text-gray-100 mb-4">
                 Actionable Insights
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 Get specific, actionable recommendations to improve your resume.
                 Our AI provides detailed tips and suggestions tailored to your
                 industry and experience level.
@@ -158,9 +152,9 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="py-12 border-t border-white/10">
+      <footer className="py-12 border-t border-gray-700">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-gray-400">
+          <p className="text-gray-300">
             © 2025 TalentTrack AI. Built with AI to help you land your dream
             job.
           </p>

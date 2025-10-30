@@ -8,7 +8,11 @@ import { usePuterStore } from "~/lib/putter";
 import { convertPdfToImage } from "~/lib/PdfToImage";
 
 export const meta = () => [
-  { title: "TalentTrack AI | Upload " },
+  { title: "JobPsych ATS - Smart Resume Analysis" },
+  {
+    name: "keywords",
+    content: "ATS, Resume Analysis, AI, Resume Scoring| Upload ",
+  },
   { name: "description", content: "Upload your resume for analysis" },
 ];
 
@@ -97,7 +101,7 @@ const Upload = () => {
   };
 
   return (
-    <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+    <main className="">
       <Navbar />
 
       <section className="main-section">
@@ -126,7 +130,7 @@ const Upload = () => {
                 <input
                   type="text"
                   name="company-name"
-                  placeholder="Company Name"
+                  placeholder="e.g., Google, Microsoft, Amazon"
                   id="company-name"
                 />
               </div>
@@ -135,7 +139,7 @@ const Upload = () => {
                 <input
                   type="text"
                   name="job-title"
-                  placeholder="Job Title"
+                  placeholder="e.g., Software Engineer, Product Manager, Data Analyst"
                   id="job-title"
                 />
               </div>
@@ -144,7 +148,7 @@ const Upload = () => {
                 <textarea
                   rows={5}
                   name="job-description"
-                  placeholder="Job Description"
+                  placeholder="Paste the full job posting description here. Include requirements, responsibilities, and qualifications to get the most accurate analysis."
                   id="job-description"
                 />
               </div>
