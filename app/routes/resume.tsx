@@ -78,7 +78,7 @@ const Resume = () => {
         </section>
         <section className="feedback-section">
           <h2 className="text-4xl !text-white font-bold">
-            Your Resume Analysis
+            JobPsych AI Career Intelligence Report
           </h2>
           {feedback ? (
             <div className="flex flex-col gap-8 animate-in fade-in duration-1000">

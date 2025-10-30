@@ -8,12 +8,17 @@ import { usePuterStore } from "~/lib/putter";
 import { convertPdfToImage } from "~/lib/PdfToImage";
 
 export const meta = () => [
-  { title: "JobPsych ATS - Smart Resume Analysis" },
+  { title: "Upload Resume | JobPsych AI Career Intelligence" },
   {
     name: "keywords",
-    content: "ATS, Resume Analysis, AI, Resume Scoring| Upload ",
+    content:
+      "JobPsych AI, Resume Upload, ATS Analysis, Career Intelligence, Resume Scoring, AI Career Assistant",
   },
-  { name: "description", content: "Upload your resume for analysis" },
+  {
+    name: "description",
+    content:
+      "Upload your resume for intelligent analysis by JobPsych AI Career Intelligence Assistant",
+  },
 ];
 
 const Upload = () => {
@@ -106,18 +111,21 @@ const Upload = () => {
 
       <section className="main-section">
         <div className="page-heading py-16">
-          <h1>Smart feedback for your dream job</h1>
+          <h1>Unlock Your Career Potential</h1>
           {isProcessing ? (
             <>
               <h2>{statusText}</h2>
               <img
                 src="/images/resume-scan.gif"
                 className="w-full"
-                alt="Resume scanning animation"
+                alt="JobPsych AI analyzing your resume"
               />
             </>
           ) : (
-            <h2>Drop your resume for an ATS score and improvement tips</h2>
+            <h2>
+              Upload your resume and let JobPsych AI Career Intelligence guide
+              your success
+            </h2>
           )}
           {!isProcessing && (
             <form

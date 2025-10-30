@@ -1,24 +1,23 @@
 import type { Route } from "./+types/home";
 import Navbar from "~/components/Navbar";
 import ResumeCard from "~/components/ResumeCard";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { useEffect, useState } from "react";
 import { usePuterStore } from "~/lib/putter";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "JobPsych ATS - Smart Resume Analysis" },
+    { title: "JobPsych AI - Resume Analyzer | Career Intelligence Assistant" },
     {
       name: "description",
       content:
-        "Get AI-powered feedback on your resume. Improve your chances of landing your dream job with intelligent ATS analysis and personalized recommendations.",
+        "Unlock your career potential with JobPsych AI Resume Analyzer. Get intelligent ATS-friendly analysis, personalized insights, and career guidance powered by advanced AI technology.",
     },
   ];
 }
 
 export default function Home() {
   const { auth, kv } = usePuterStore();
-  const navigate = useNavigate();
   const [resumes, setResumes] = useState<Resume[]>([]);
   const [loadingResumes, setLoadingResumes] = useState(false);
 
@@ -88,12 +87,12 @@ export default function Home() {
       <section className="main-section">
         <div className="page-heading py-20">
           <h1 className="max-w-4xl mx-auto">
-            Get AI-Powered Feedback on Your Resume
+            Elevate Your Career with JobPsych AI Resume Analyzer
           </h1>
           <h2 className="max-w-2xl mx-auto mt-6">
-            Boost your job search with intelligent ATS analysis, personalized
-            recommendations, and comprehensive scoring to land your dream job
-            faster.
+            Your personal Career Intelligence Assistant. Get instant
+            ATS-optimized feedback, actionable insights, and expert guidance to
+            unlock your professional potential.
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center">
             <Link to="/auth?next=/upload" className="auth-button">
@@ -107,45 +106,49 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-100 mb-4">
-              Why Choose TalentTrack AI?
+              Why JobPsych AI Resume Analyzer?
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Our AI-powered platform provides comprehensive resume analysis to
-              give you the competitive edge.
+              Powered by advanced AI technology, our Career Intelligence
+              platform delivers comprehensive resume analysis and strategic
+              career insights.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <h3 className="text-xl font-semibold text-gray-100 mb-4">
-                ATS Optimization
+                Smart ATS Analysis
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                Get detailed analysis of how well your resume performs with
-                Applicant Tracking Systems. Our AI identifies keywords,
-                formatting issues, and optimization opportunities.
+                Leverage JobPsych AI's intelligent scanning to ensure your
+                resume passes Applicant Tracking Systems. We identify critical
+                keywords, format optimization, and compatibility issues
+                instantly.
               </p>
             </div>
 
             <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <h3 className="text-xl font-semibold text-gray-100 mb-4">
-                Comprehensive Scoring
+                Career Intelligence Scoring
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                Receive detailed scores across multiple categories including
-                content quality, structure, skills presentation, and overall
-                effectiveness.
+                Receive JobPsych AI's multi-dimensional evaluation across tone,
+                content quality, structure, and skills alignment. Our Career
+                Intelligence system provides precision scoring for maximum
+                impact.
               </p>
             </div>
 
             <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <h3 className="text-xl font-semibold text-gray-100 mb-4">
-                Actionable Insights
+                Personalized Career Guidance
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                Get specific, actionable recommendations to improve your resume.
-                Our AI provides detailed tips and suggestions tailored to your
-                industry and experience level.
+                Get tailored recommendations from JobPsych AI's Career
+                Intelligence. Our advanced AI analyzes your profile and delivers
+                personalized insights aligned with your career goals and
+                industry standards.
               </p>
             </div>
           </div>
@@ -155,8 +158,8 @@ export default function Home() {
       <footer className="py-12 border-t border-gray-700">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-gray-300">
-            © 2025 TalentTrack AI. Built with AI to help you land your dream
-            job.
+            © 2025 JobPsych AI. Your Career Intelligence Assistant - Empowering
+            professionals to unlock their full potential.
           </p>
         </div>
       </footer>

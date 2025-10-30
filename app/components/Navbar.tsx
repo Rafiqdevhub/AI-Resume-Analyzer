@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <Link to="/">
-        <p className="text-2xl font-bold text-gradient">AI Resume Analyzer</p>
+        <p className="text-2xl font-bold text-gradient">JobPsych AI</p>
       </Link>
       <div className="flex items-center gap-6">
         {auth.isAuthenticated && (
