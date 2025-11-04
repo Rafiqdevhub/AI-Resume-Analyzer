@@ -1,3 +1,39 @@
+@font-face {
+  font-family: "Tinos";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/tinos/v16/buEwpTfczT5H1H5Z1mIdx3s.woff2")
+    format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tinos";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://fonts.gstatic.com/s/tinos/v16/buEvpTfczT5H1H5Z1mId_VvO6yB_.woff2")
+    format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tinos";
+  font-style: italic;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/tinos/v16/buE1pTfczT5H1H5Z1mIdQVeKfzUN-Q.woff2")
+    format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tinos";
+  font-style: italic;
+  font-weight: 700;
+  src: url("https://fonts.gstatic.com/s/tinos/v16/buE3pTfczT5H1H5Z1mIdQVeKfzXR4Tz0.woff2")
+    format("woff2");
+  font-display: swap;
+}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -10,7 +46,10 @@
     "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
     "Roboto Mono", "Segoe UI Mono", monospace;
   --font-serif:
-    "Crimson Text", Georgia, Cambria, "Times New Roman", Times, serif;
+    "Tinos", "Crimson Text", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-tinos: "Tinos", Georgia, serif;
+  --font-tinos-weight-regular: 400;
+  --font-tinos-weight-bold: 700;
   --color-dark-200: #475467;
   --color-light-blue-100: #c1d3f81a;
   --color-light-blue-200: #a7bff14d;
@@ -22,6 +61,11 @@
   --color-badge-green-text: #a7f3d0;
   --color-badge-red-text: #fca5a5;
   --color-badge-yellow-text: #fcd34d;
+
+  --font-family-tinos: "Tinos", Georgia, serif;
+  --font-family-sans: var(--font-sans);
+  --font-family-serif: var(--font-serif);
+  --font-family-mono: var(--font-mono);
 }
 
 html,
@@ -41,6 +85,32 @@ h1 {
 
 h2 {
   @apply max-sm:text-xl text-3xl text-gray-200;
+}
+
+/* Apply Tinos to all heading elements globally */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-tinos);
+  font-weight: var(--font-tinos-weight-bold);
+}
+
+/* Specific heading styles */
+h1 {
+  font-family: var(--font-tinos);
+  font-weight: 900;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-tinos);
+  font-weight: 700;
 }
 
 label {
