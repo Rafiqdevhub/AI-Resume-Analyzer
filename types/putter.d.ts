@@ -16,7 +16,6 @@ interface FSItem {
 interface PuterUser {
   uuid: string;
   username: string;
-  email?: string;
 }
 
 interface KVItem {
