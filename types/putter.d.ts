@@ -16,6 +16,8 @@ interface FSItem {
 interface PuterUser {
   uuid: string;
   username: string;
+  // optional email field - some Puter installations provide an email
+  email?: string;
 }
 
 interface KVItem {
