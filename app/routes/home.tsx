@@ -1,9 +1,6 @@
 import type { Route } from "./+types/home";
-import Navbar from "~/components/Navbar";
-import ResumeCard from "~/components/ResumeCard";
 import { Link } from "react-router";
-import { useEffect, useState } from "react";
-import { usePuterStore } from "~/lib/putter";
+import Navbar from "~/components/Navbar";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -17,73 +14,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const { auth, kv } = usePuterStore();
-  const [resumes, setResumes] = useState<Resume[]>([]);
-  const [loadingResumes, setLoadingResumes] = useState(false);
-
-  useEffect(() => {
-    if (auth.isAuthenticated) {
-      const loadResumes = async () => {
-        setLoadingResumes(true);
-        const resumes = (await kv.list("resume:*", true)) as KVItem[];
-        const parsedResumes = resumes
-          ?.filter((resume) => resume.value && resume.value.trim() !== "")
-          ?.map((resume) => JSON.parse(resume.value) as Resume);
-        setResumes(parsedResumes || []);
-        setLoadingResumes(false);
-      };
-      loadResumes();
-    }
-  }, [auth.isAuthenticated, kv]);
-
-  if (auth.isAuthenticated) {
-    return (
-      <main className="bg-gray-900">
-        <Navbar />
-        <section className="main-section">
-          <div className="page-heading py-16">
-            <h1>View Your Applications and Resume Scores</h1>
-            {!loadingResumes && resumes?.length === 0 ? (
-              <h2>Upload a resume to see feedback.</h2>
-            ) : (
-              <h2>See your submissions and AI feedback.</h2>
-            )}
-          </div>
-          {loadingResumes && (
-            <div className="flex flex-col items-center justify-center">
-              <img
-                src="/images/resume-scan-2.gif"
-                className="w-[200px]"
-                alt="Scanning resume animation"
-              />
-            </div>
-          )}
-
-          {!loadingResumes && resumes.length > 0 && (
-            <div className="resumes-section">
-              {resumes.map((resume) => (
-                <ResumeCard key={resume.id} resume={resume} />
-              ))}
-            </div>
-          )}
-
-          {!loadingResumes && resumes?.length === 0 && (
-            <div className="flex flex-col items-center justify-center mt-10 gap-4">
-              <Link
-                to="/upload"
-                className="primary-button w-fit text-xl font-semibold"
-              >
-                Upload Resume
-              </Link>
-            </div>
-          )}
-        </section>
-      </main>
-    );
-  }
-
   return (
     <main className="bg-gray-900">
+      <Navbar />
       <section className="main-section">
         <div className="page-heading py-20">
           <h1 className="max-w-4xl mx-auto">
@@ -95,8 +28,14 @@ export default function Home() {
             unlock your professional potential.
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center">
-            <Link to="/auth?next=/upload" className="auth-button">
-              Get Started
+            <Link to="/auth?next=/dashboard" className="auth-button">
+              Get Started - Login
+            </Link>
+            <Link
+              to="/upload"
+              className="auth-button bg-gray-700 hover:bg-gray-600"
+            >
+              Try Now - Upload Resume
             </Link>
           </div>
         </div>
@@ -117,6 +56,21 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mb-6">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
               <h3 className="text-xl font-semibold text-gray-100 mb-4">
                 Smart ATS Analysis
               </h3>
@@ -129,6 +83,21 @@ export default function Home() {
             </div>
 
             <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mb-6">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
               <h3 className="text-xl font-semibold text-gray-100 mb-4">
                 Career Intelligence Scoring
               </h3>
@@ -141,6 +110,21 @@ export default function Home() {
             </div>
 
             <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mb-6">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+              </div>
               <h3 className="text-xl font-semibold text-gray-100 mb-4">
                 Personalized Career Guidance
               </h3>

@@ -40,10 +40,30 @@ const Navbar = () => {
         <p className="text-2xl font-bold text-gradient">JobPsych AI</p>
       </Link>
       <div className="flex items-center gap-6">
-        {auth.isAuthenticated && (
-          <Link to="/upload" className="primary-button w-fit">
-            Upload Resume
-          </Link>
+        {auth.isAuthenticated ? (
+          <>
+            <Link
+              to="/dashboard"
+              className="text-gray-200 hover:text-gray-100 transition-colors"
+            >
+              Dashboard
+            </Link>
+            <Link to="/upload" className="primary-button w-fit">
+              Upload Resume
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link
+              to="/upload"
+              className="text-gray-200 hover:text-gray-100 transition-colors"
+            >
+              Try Now
+            </Link>
+            <Link to="/auth?next=/dashboard" className="primary-button w-fit">
+              Login
+            </Link>
+          </>
         )}
         {auth.isAuthenticated && auth.user && (
           <div className="relative" ref={menuRef}>
@@ -122,18 +142,6 @@ const Navbar = () => {
               </div>
             )}
           </div>
-        )}
-
-        {!auth.isAuthenticated && (
-          <Link to="/upload" className="primary-button w-fit">
-            Upload Resume
-          </Link>
-        )}
-
-        {!auth.isAuthenticated && (
-          <Link to="/upload" className="primary-button w-fit">
-            Upload Resume
-          </Link>
         )}
       </div>
     </nav>

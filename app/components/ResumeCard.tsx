@@ -22,36 +22,37 @@ const ResumeCard = ({
     loadResume();
   }, [imagePath]);
   return (
-    <Link
-      to={`/resume/${id}`}
-      className="resume-card animate-in fade-in duration-1000"
-    >
-      <div className="resume-card-header">
-        <div className="flex flex-col gap-2">
-          {companyName && (
-            <h2 className="!text-white font-bold break-words">{companyName}</h2>
-          )}
-          {jobTitle && (
-            <h3 className="text-lg break-words text-gray-300">{jobTitle}</h3>
-          )}
-          {!companyName && !jobTitle && (
-            <h2 className="!text-white font-bold">General Resume</h2>
-          )}
+    <div className="mb-8 p-4 bg-gray-800 rounded-2xl border border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300">
+      <Link to={`/resume/${id}`} className="block w-full">
+        <div className="resume-card-header mb-4">
+          <div className="flex flex-col gap-2">
+            {companyName && (
+              <h2 className="!text-white font-bold break-words">
+                {companyName}
+              </h2>
+            )}
+            {jobTitle && (
+              <h3 className="text-lg break-words text-gray-300">{jobTitle}</h3>
+            )}
+            {!companyName && !jobTitle && (
+              <h2 className="!text-white font-bold">General Resume</h2>
+            )}
+          </div>
+          <div className="flex-shrink-0">
+            <ScoreCircle score={feedback.overallScore} />
+          </div>
         </div>
-        <div className="flex-shrink-0">
-          <ScoreCircle score={feedback.overallScore} />
+        <div className="gradient-border animate-in fade-in duration-1000">
+          <div className="w-full h-full">
+            <img
+              src={resumeUrl}
+              alt="resume"
+              className="w-full h-[350px] max-sm:h-[200px] object-cover object-top rounded-lg"
+            />
+          </div>
         </div>
-      </div>
-      <div className="gradient-border animate-in fade-in duration-1000">
-        <div className="w-full h-full">
-          <img
-            src={resumeUrl}
-            alt="resume"
-            className="w-full h-[350px] max-sm:h-[200px] object-cover object-top"
-          />
-        </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

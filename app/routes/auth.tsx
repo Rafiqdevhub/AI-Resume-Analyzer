@@ -14,12 +14,13 @@ export const meta = () => [
 const Auth = () => {
   const { isLoading, auth } = usePuterStore();
   const location = useLocation();
-  const next = location.search.split("next=")[1];
+  const nextUrl =
+    new URLSearchParams(location.search).get("next") || "/dashboard";
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (auth.isAuthenticated) navigate(next);
-  }, [auth.isAuthenticated, next]);
+    if (auth.isAuthenticated) navigate(nextUrl);
+  }, [auth.isAuthenticated, nextUrl, navigate]);
 
   return (
     <main className="bg-gray-900 min-h-screen flex items-center justify-center px-4">

@@ -88,6 +88,7 @@ const Upload = () => {
     await kv.set(`resume:${uuid}`, JSON.stringify(data));
     setStatusText("Analysis complete, redirecting...");
     navigate(`/resume/${uuid}`);
+    // After viewing results, user can return to dashboard
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
