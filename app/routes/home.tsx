@@ -4,11 +4,11 @@ import Navbar from "~/components/Navbar";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "JobPsych AI - Resume Analyzer | Career Intelligence Assistant" },
+    { title: "JobPsych AI - Documents Quality Improvement" },
     {
       name: "description",
       content:
-        "Unlock your career potential with JobPsych AI Resume Analyzer. Get intelligent ATS-friendly analysis, personalized insights, and career guidance powered by advanced AI technology.",
+        "AI-Powered document analysis and enhancement platform. Optimize your content with advanced AI technology for improved quality, clarity, and impact.",
     },
   ];
 }
@@ -20,12 +20,12 @@ export default function Home() {
       <section className="main-section">
         <div className="page-heading py-20">
           <h1 className="max-w-4xl mx-auto">
-            Elevate Your Career with JobPsych AI Resume Analyzer
+            Elevate Your Career with JobPsych AI Documents Quality Improvement
           </h1>
           <h2 className="max-w-2xl mx-auto mt-6">
-            Your personal Career Intelligence Assistant. Get instant
-            ATS-optimized feedback, actionable insights, and expert guidance to
-            unlock your professional potential.
+            Your personal Career Intelligence Assistant. Get instant Documents
+            Quality Improvement feedback, actionable insights, and expert
+            guidance to unlock your professional potential.
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center">
             <Link to="/auth?next=/dashboard" className="auth-button">
@@ -35,7 +35,7 @@ export default function Home() {
               to="/upload"
               className="auth-button bg-gray-700 hover:bg-gray-600"
             >
-              Try Now - Upload Resume
+              Try Now - Upload your Documents
             </Link>
           </div>
         </div>
@@ -45,11 +45,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-100 mb-4">
-              Why JobPsych AI Resume Analyzer?
+              Why JobPsych AI Documents Analyzer?
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Powered by advanced AI technology, our Career Intelligence
-              platform delivers comprehensive resume analysis and strategic
+              platform delivers comprehensive documents analysis and strategic
               career insights.
             </p>
           </div>
@@ -72,11 +72,11 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-100 mb-4">
-                Smart ATS Analysis
+                Smart Documents Analysis
               </h3>
               <p className="text-gray-300 leading-relaxed">
                 Leverage JobPsych AI's intelligent scanning to ensure your
-                resume passes Applicant Tracking Systems. We identify critical
+                documents pass Applicant Tracking Systems. We identify critical
                 keywords, format optimization, and compatibility issues
                 instantly.
               </p>

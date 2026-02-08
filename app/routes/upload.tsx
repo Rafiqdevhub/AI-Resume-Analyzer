@@ -8,16 +8,16 @@ import { usePuterStore } from "~/lib/putter";
 import { convertPdfToImage } from "~/lib/PdfToImage";
 
 export const meta = () => [
-  { title: "Upload Resume | JobPsych AI Career Intelligence" },
+  { title: "Upload Documents | JobPsych AI Career Intelligence" },
   {
     name: "keywords",
     content:
-      "JobPsych AI, Resume Upload, ATS Analysis, Career Intelligence, Resume Scoring, AI Career Assistant",
+      "JobPsych AI, Documents Upload, ATS Analysis, Career Intelligence, Documents Scoring, AI Career Assistant",
   },
   {
     name: "description",
     content:
-      "Upload your resume for intelligent analysis by JobPsych AI Career Intelligence Assistant",
+      "Upload your documents for intelligent analysis by JobPsych AI Career Intelligence Assistant",
   },
 ];
 
@@ -75,9 +75,9 @@ const Upload = () => {
 
     const feedback = await ai.feedback(
       uploadedFile.path,
-      prepareInstructions({ jobTitle, jobDescription })
+      prepareInstructions({ jobTitle, jobDescription }),
     );
-    if (!feedback) return setStatusText("Error: Failed to analyze resume");
+    if (!feedback) return setStatusText("Error: Failed to analyze documents");
 
     const feedbackText =
       typeof feedback.message.content === "string"
@@ -119,13 +119,13 @@ const Upload = () => {
               <img
                 src="/images/resume-scan.gif"
                 className="w-full"
-                alt="JobPsych AI analyzing your resume"
+                alt="JobPsych AI analyzing your documents"
               />
             </>
           ) : (
             <h2>
-              Upload your resume and let JobPsych AI Career Intelligence guide
-              your success
+              Upload your documents and let JobPsych AI Career Intelligence
+              guide your success
             </h2>
           )}
           {!isProcessing && (
@@ -163,12 +163,12 @@ const Upload = () => {
               </div>
 
               <div className="form-div">
-                <label htmlFor="uploader">Upload Resume</label>
+                <label htmlFor="uploader">Upload Documents</label>
                 <FileUploader onFileSelect={handleFileSelect} />
               </div>
 
               <button className="primary-button" type="submit">
-                Analyze Resume
+                Analyze Documents
               </button>
             </form>
           )}

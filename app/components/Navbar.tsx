@@ -49,7 +49,7 @@ const Navbar = () => {
               Dashboard
             </Link>
             <Link to="/upload" className="primary-button w-fit">
-              Upload Resume
+              Upload Documents
             </Link>
           </>
         ) : (

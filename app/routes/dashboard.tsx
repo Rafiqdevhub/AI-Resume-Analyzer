@@ -7,11 +7,11 @@ import { usePuterStore } from "~/lib/putter";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Dashboard - JobPsych AI Resume Analyzer" },
+    { title: "Dashboard - JobPsych AI Documents Analyzer" },
     {
       name: "description",
       content:
-        "View your uploaded resumes and AI analysis results. Manage your career documents and track your progress.",
+        "View your uploaded documents and AI analysis results. Manage your career documents and track your progress.",
     },
   ];
 }
@@ -75,7 +75,7 @@ export default function Dashboard() {
 
               <div className="flex flex-col">
                 <h1 className="text-2xl font-bold text-white">
-                  Resume Dashboard
+                  Documents Dashboard
                 </h1>
                 <p className="text-gray-400 text-sm">
                   Manage your career documents and track your progress
@@ -88,7 +88,7 @@ export default function Dashboard() {
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                   <span className="text-gray-300 text-sm font-medium">
-                    {resumes.length} Resume{resumes.length !== 1 ? "s" : ""}
+                    {resumes.length} Document{resumes.length !== 1 ? "s" : ""}
                   </span>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function Dashboard() {
                     d="M12 4v16m8-8H4"
                   />
                 </svg>
-                <span>Upload Resume</span>
+                <span>Upload Documents</span>
               </Link>
             </div>
           </div>
@@ -124,11 +124,11 @@ export default function Dashboard() {
               <img
                 src="/images/resume-scan-2.gif"
                 className="w-32 h-32 object-cover rounded-lg"
-                alt="Loading your resumes..."
+                alt="Loading your documents..."
               />
             </div>
             <h3 className="text-lg font-medium text-gray-300 mb-2">
-              Loading your resumes...
+              Loading your documents...
             </h3>
             <p className="text-gray-500">
               Please wait while we fetch your career documents
@@ -158,8 +158,8 @@ export default function Dashboard() {
                 Start Your Career Journey
               </h2>
               <p className="text-gray-400 text-lg max-w-md mx-auto mb-8">
-                Upload your first resume to get AI-powered insights and career
-                intelligence
+                Upload your first documents to get AI-powered insights and
+                career intelligence
               </p>
             </div>
 
@@ -180,7 +180,7 @@ export default function Dashboard() {
                   d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                 />
               </svg>
-              Upload Your First Resume
+              Upload Your First Documents
             </Link>
           </div>
         )}
@@ -190,7 +190,7 @@ export default function Dashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-semibold text-white">
-                  Your Resume Collection
+                  Your Documents Collection
                 </h2>
                 <p className="text-gray-400">
                   AI-powered career intelligence for each document
@@ -200,7 +200,7 @@ export default function Dashboard() {
               <div className="flex items-center gap-3">
                 <select
                   className="bg-gray-800 border border-gray-600 text-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  aria-label="Sort resumes by"
+                  aria-label="Sort documents by"
                 >
                   <option value="recent">Most Recent</option>
                   <option value="score">Highest Score</option>

@@ -43,7 +43,7 @@ const ATS: React.FC<ATSProps> = ({ score, suggestions }) => {
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-2 text-gray-100">{subtitle}</h3>
         <p className="text-gray-300 mb-4">
-          This score shows how well your resume will likely do with automated
+          This score shows how well your documents will likely do with automated
           hiring systems.
         </p>
         <div className="space-y-3">
@@ -72,7 +72,7 @@ const ATS: React.FC<ATSProps> = ({ score, suggestions }) => {
         </div>
       </div>
       <p className="text-gray-300 italic">
-        Continue to improve your resume to boost your chances of landing an
+        Continue to improve your documents to boost your chances of landing an
         interview.
       </p>
     </div>

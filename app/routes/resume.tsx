@@ -118,10 +118,10 @@ const DeleteConfirmModal = ({
       />
       <div className="relative bg-gray-800 rounded-2xl shadow-2xl p-6 max-w-md w-full mx-4 animate-in zoom-in-95 duration-200">
         <h3 className="text-xl font-bold text-gray-100 text-center mb-2">
-          Delete Resume?
+          Delete Documents?
         </h3>
         <p className="text-gray-300 text-center mb-6">
-          Are you sure you want to delete this resume? This action cannot be
+          Are you sure you want to delete this documents? This action cannot be
           undone and all associated data will be permanently removed.
         </p>
 
@@ -145,10 +145,10 @@ const DeleteConfirmModal = ({
 };
 
 export const meta = () => [
-  { title: "Resume Review" },
+  { title: "Documents Review" },
   {
     name: "description",
-    content: "Check out the detailed analysis of your resume.",
+    content: "Check out the detailed analysis of your documents.",
   },
 ];
 
@@ -180,12 +180,12 @@ const Resume = () => {
 
     setShowDeleteModal(false);
     setIsDeleting(true);
-    setToast({ message: "Deleting resume...", type: "info" });
+    setToast({ message: "Deleting documents...", type: "info" });
 
     try {
       const resumeData = await kv.get(`resume:${id}`);
       if (!resumeData) {
-        setToast({ message: "Resume not found.", type: "error" });
+        setToast({ message: "Documents not found.", type: "error" });
         setIsDeleting(false);
         return;
       }
@@ -201,12 +201,12 @@ const Resume = () => {
 
       await kv.set(`resume:${id}`, "");
 
-      setToast({ message: "Resume deleted successfully!", type: "success" });
+      setToast({ message: "Documents deleted successfully!", type: "success" });
       setTimeout(() => navigate("/"), 1500);
     } catch (error) {
       console.error("Error deleting resume:", error);
       setToast({
-        message: "Failed to delete resume. Please try again.",
+        message: "Failed to delete documents. Please try again.",
         type: "error",
       });
       setIsDeleting(false);
@@ -280,7 +280,7 @@ const Resume = () => {
             />
           </svg>
           <span className="text-red-400 text-sm font-semibold">
-            {isDeleting ? "Deleting..." : "Delete Resume"}
+            {isDeleting ? "Deleting..." : "Delete Documents"}
           </span>
         </button>
       </nav>
@@ -292,7 +292,7 @@ const Resume = () => {
                 <img
                   src={imageUrl}
                   className="w-full h-full object-contain rounded-2xl"
-                  title="resume"
+                  title="documents"
                 />
               </a>
             </div>
@@ -315,7 +315,7 @@ const Resume = () => {
             <img
               src="/images/resume-scan-2.gif"
               className="w-full"
-              alt="Analyzing your resume..."
+              alt="Analyzing your documents..."
             />
           )}
         </section>

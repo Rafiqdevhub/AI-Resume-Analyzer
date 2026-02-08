@@ -7,7 +7,7 @@ export const meta = () => [
   {
     name: "description",
     content:
-      "Sign in to access your JobPsych AI Career Intelligence Assistant and unlock personalized resume analysis",
+      "Sign in to access your JobPsych AI Career Intelligence Assistant and unlock personalized documents analysis",
   },
 ];
 
@@ -53,7 +53,7 @@ const Auth = () => {
                 Sign In to Access Your Career Intelligence Assistant
               </h2>
               <p className="text-sm text-gray-400 max-w-sm">
-                Unlock personalized resume analysis, ATS optimization, and
+                Unlock personalized documents analysis, ATS optimization, and
                 career insights powered by advanced AI technology.
               </p>
             </div>

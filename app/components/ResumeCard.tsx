@@ -35,7 +35,7 @@ const ResumeCard = ({
               <h3 className="text-lg break-words text-gray-300">{jobTitle}</h3>
             )}
             {!companyName && !jobTitle && (
-              <h2 className="!text-white font-bold">General Resume</h2>
+              <h2 className="!text-white font-bold">General Documents</h2>
             )}
           </div>
           <div className="flex-shrink-0">
@@ -46,7 +46,7 @@ const ResumeCard = ({
           <div className="w-full h-full">
             <img
               src={resumeUrl}
-              alt="resume"
+              alt="documents"
               className="w-full h-[350px] max-sm:h-[200px] object-cover object-top rounded-lg"
             />
           </div>
