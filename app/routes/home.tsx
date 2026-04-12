@@ -1,6 +1,7 @@
 import type { Route } from "./+types/home";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Navbar from "~/components/Navbar";
+import { usePuterStore } from "~/lib/putter";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -14,6 +15,17 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const { auth } = usePuterStore();
+  const navigate = useNavigate();
+
+  const handleUploadClick = () => {
+    if (auth.isAuthenticated) {
+      navigate("/upload");
+    } else {
+      navigate("/auth?next=/upload");
+    }
+  };
+
   return (
     <main className="bg-gradient-to-b from-gray-900 via-gray-900 to-black overflow-hidden">
       <Navbar />
@@ -39,27 +51,34 @@ export default function Home() {
             Preparation System
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
             Unlock the power of AI-driven document analysis. Get real-time
             quality insights, overcome ATS barriers, and position yourself for
             success with our Career Intelligence Assistant.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Link
-              to="/auth?next=/dashboard"
-              className="group relative px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
+          {/* CTA Button */}
+          <button
+            onClick={handleUploadClick}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 mb-8 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              <span className="relative z-10">Get Started - Login</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </Link>
-            <Link
-              to="/upload"
-              className="px-8 py-4 text-lg font-semibold text-gray-100 border-2 border-gray-500 rounded-xl hover:bg-gray-700/50 hover:border-purple-500 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
-            >
-              Try Now - Upload Documents
-            </Link>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+            {auth.isAuthenticated
+              ? "Upload Your Documents Now"
+              : "Login to Get Started"}
+          </button>
 
           {/* Stats under CTA */}
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8 border-t border-gray-700">
@@ -409,32 +428,6 @@ export default function Home() {
         </div>
       </section>
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 blur-3xl"></div>
-        <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-100 mb-6">
-            Ready to Transform Your Career?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Join thousands of professionals who have improved their documents
-            with JobPsych AI. Start your journey today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/auth?next=/dashboard"
-              className="px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
-            >
-              Get Started Now
-            </Link>
-            <Link
-              to="/upload"
-              className="px-8 py-4 text-lg font-semibold text-gray-100 border-2 border-gray-500 rounded-xl hover:bg-gray-700/50 hover:border-purple-500 transition-all duration-300 transform hover:scale-105"
-            >
-              Try for Free
-            </Link>
-          </div>
-        </div>
-      </section>
       {/* Footer */}
       <footer className="border-t border-gray-700 bg-gray-950 py-16">
         <div className="max-w-7xl mx-auto px-4">

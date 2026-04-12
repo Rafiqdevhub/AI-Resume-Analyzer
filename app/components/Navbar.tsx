@@ -48,18 +48,9 @@ const Navbar = () => {
             >
               Dashboard
             </Link>
-            <Link to="/upload" className="primary-button w-fit">
-              Upload Documents
-            </Link>
           </>
         ) : (
           <>
-            <Link
-              to="/upload"
-              className="text-gray-200 hover:text-gray-100 transition-colors"
-            >
-              Try Now
-            </Link>
             <Link to="/auth?next=/dashboard" className="primary-button w-fit">
               Login
             </Link>
