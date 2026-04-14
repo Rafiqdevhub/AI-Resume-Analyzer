@@ -8,16 +8,19 @@ import { usePuterStore } from "~/lib/putter";
 import { convertPdfToImage } from "~/lib/PdfToImage";
 
 export const meta = () => [
-  { title: "Upload & Analyze Documents | JobPsych AI Career Intelligence" },
+  {
+    title:
+      "Upload & Analyze Documents | JobPsych AI Documents Quality Improvement",
+  },
   {
     name: "keywords",
     content:
-      "JobPsych AI, Documents Upload, ATS Optimization, Resume Analysis, Career Intelligence, Document Scoring, AI Career Assistant",
+      "JobPsych AI, document quality improvement, content analysis, ATS readiness, document scoring, clarity feedback, structure analysis",
   },
   {
     name: "description",
     content:
-      "Upload your resume and get comprehensive AI-powered analysis with actionable insights to optimize your professional documents and ace your job applications.",
+      "Upload your document and get AI-powered feedback on content quality, structure, clarity, ATS readiness, and actionable improvements.",
   },
 ];
 
@@ -118,7 +121,7 @@ const Upload = () => {
                 <div className="inline-flex items-center justify-center gap-2 mb-6 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
                   <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
                   <span className="text-sm font-semibold text-blue-300">
-                    AI Analysis in Progress
+                    Document Analysis in Progress
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-6">
@@ -127,7 +130,7 @@ const Upload = () => {
                 <img
                   src="/images/resume-scan.gif"
                   className="w-full rounded-xl shadow-lg mt-8"
-                  alt="JobPsych AI analyzing your documents"
+                  alt="JobPsych AI analyzing your document"
                 />
               </>
             ) : (
@@ -135,17 +138,16 @@ const Upload = () => {
                 <div className="inline-flex items-center justify-center gap-2 mb-6 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
                   <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
                   <span className="text-sm font-semibold text-blue-300">
-                    Professional Document Analysis
+                    Document Quality Improvement
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-6">
-                  Optimize Your Documents for Success
+                  Improve Your Documents with AI
                 </h1>
                 <p className="text-xl text-gray-300 mb-4 leading-relaxed">
-                  Share your professional documents with our AI Career
-                  Intelligence Assistant. Get detailed feedback on ATS
-                  compatibility, content quality, skills alignment, and
-                  actionable recommendations to elevate your application.
+                  Share your document with our AI assistant and get detailed
+                  feedback on content quality, clarity, structure, ATS
+                  readiness, and actionable recommendations.
                 </p>
               </>
             )}
@@ -172,7 +174,7 @@ const Upload = () => {
                       d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                     />
                   </svg>
-                  Target Position Details
+                  Document Context
                 </h3>
                 <div className="space-y-4">
                   <div className="form-div">
@@ -190,8 +192,7 @@ const Upload = () => {
                       className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-colors"
                     />
                     <p className="text-xs text-gray-400 mt-1">
-                      The company you're applying to helps personalize the
-                      analysis.
+                      The target company helps personalize the analysis.
                     </p>
                   </div>
                   <div className="form-div">
@@ -199,7 +200,7 @@ const Upload = () => {
                       htmlFor="job-title"
                       className="font-semibold text-gray-100"
                     >
-                      Job Title
+                      Target Role
                     </label>
                     <input
                       type="text"
@@ -209,7 +210,7 @@ const Upload = () => {
                       className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-colors"
                     />
                     <p className="text-xs text-gray-400 mt-1">
-                      The specific role you're targeting for precise evaluation.
+                      The role you're targeting helps tailor the feedback.
                     </p>
                   </div>
                 </div>
@@ -231,14 +232,14 @@ const Upload = () => {
                       d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                     />
                   </svg>
-                  Job Requirements
+                  Job Description
                 </h3>
                 <div className="form-div">
                   <label
                     htmlFor="job-description"
                     className="font-semibold text-gray-100"
                   >
-                    Job Description
+                    Target Content Context
                   </label>
                   <textarea
                     rows={6}
@@ -248,8 +249,8 @@ const Upload = () => {
                     className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-500 focus:border-purple-500 focus:outline-none transition-colors resize-none"
                   />
                   <p className="text-xs text-gray-400 mt-1">
-                    Copy the complete job description from the job posting. This
-                    helps us identify keyword matches and skill gaps.
+                    Paste the complete job description so we can compare your
+                    document against the target content and highlight gaps.
                   </p>
                 </div>
               </div>
@@ -277,13 +278,13 @@ const Upload = () => {
                     htmlFor="uploader"
                     className="font-semibold text-gray-100 block mb-3"
                   >
-                    Professional Document
+                    Document File
                   </label>
                   <FileUploader onFileSelect={handleFileSelect} />
                   <p className="text-xs text-gray-400 mt-3">
                     Supports PDF format. Our AI will analyze content quality,
-                    ATS compatibility, keyword alignment, and provide
-                    personalized recommendations.
+                    ATS readiness, keyword alignment, and provide personalized
+                    recommendations.
                   </p>
                 </div>
               </div>
@@ -305,140 +306,12 @@ const Upload = () => {
                     d="M13 10V3L4 14h7v7l9-11h-7z"
                   />
                 </svg>
-                Analyze Documents with AI
+                Analyze Document with AI
               </button>
             </form>
           )}
         </div>
       </section>
-
-      {/* Benefits Section */}
-      {!isProcessing && (
-        <section className="py-16 bg-gray-900/50">
-          <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-100 mb-12 text-center">
-              What Our AI Analysis Covers
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600">
-                    <svg
-                      className="h-6 w-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-100 mb-1">
-                    ATS Compatibility
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Ensure your document passes Applicant Tracking Systems with
-                    intelligent keyword analysis.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600">
-                    <svg
-                      className="h-6 w-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-100 mb-1">
-                    Content Quality
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Get detailed feedback on clarity, impact, and effectiveness
-                    of your language.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-r from-pink-500 to-pink-600">
-                    <svg
-                      className="h-6 w-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-100 mb-1">
-                    Skills Alignment
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Identify skill gaps and opportunities to better match job
-                    requirements.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600">
-                    <svg
-                      className="h-6 w-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-100 mb-1">
-                    Actionable Insights
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Receive personalized recommendations to strengthen your
-                    application instantly.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
     </main>
   );
 };
