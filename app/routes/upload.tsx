@@ -110,7 +110,7 @@ const Upload = () => {
   };
 
   return (
-    <main className="bg-gradient-to-b from-gray-900 via-gray-900 to-black min-h-screen">
+    <main className="min-h-screen">
       <Navbar />
 
       <section className="main-section py-16">

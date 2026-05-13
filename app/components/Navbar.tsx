@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <Link to="/">
-        <p className="text-2xl font-bold text-gradient">JobPsych AI</p>
+        <p className="text-2xl font-bold text-gradient">JobPsych</p>
       </Link>
       <div className="flex items-center gap-6">
         {auth.isAuthenticated ? (
@@ -60,7 +60,7 @@ const Navbar = () => {
           <div className="relative" ref={menuRef}>
             <button
               onClick={toggleUserMenu}
-              className="flex items-center gap-3 px-3 py-2 bg-gray-900/80 rounded-full border border-gray-600 shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer"
+              className="flex items-center gap-3 px-3 py-2 rounded-full border border-gray-600 shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer"
             >
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">
                 {auth.user.username.charAt(0).toUpperCase()}

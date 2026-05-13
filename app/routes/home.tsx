@@ -27,21 +27,21 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-gradient-to-b from-gray-900 via-gray-900 to-black overflow-hidden">
+    <main className="overflow-hidden">
       <Navbar />
       {/* Hero Section with Animated Background */}
       <section className="relative  flex items-center justify-center pt-0 pb-10 overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 right-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-500"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96  rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96  rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 right-0 w-96 h-96 rounded-full blur-3xl animate-pulse delay-500"></div>
         </div>
 
         <div className="page-heading max-w-6xl mx-auto px-4 text-center relative z-10">
           <div className="inline-flex items-center justify-center gap-2 mb-8 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
             <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
-            <span className="text-sm font-semibold text-blue-300">
+            <span className="text-sm font-semibold">
               AI-Powered Career Intelligence Platform
             </span>
           </div>
@@ -51,7 +51,7 @@ export default function Home() {
             Preparation System
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
             Unlock the power of AI-driven document analysis. Get real-time
             quality insights, overcome ATS barriers, and position yourself for
             success with our Career Intelligence Assistant.
@@ -98,10 +98,10 @@ export default function Home() {
         </div>
       </section>{" "}
       {/* Why Choose Us Section */}
-      <section className="py-24 bg-gray-900/50 relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300">
+            <h2 className="text-5xl md:text-6xl mb-6">
               Why Choose JobPsych AI?
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -214,7 +214,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 relative">
             {/* Step 1 */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 h-full">
+              <div className="rounded-2xl p-8 border border-gray-700 h-full">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center font-bold text-white text-lg">
                   1
                 </div>
@@ -236,7 +236,7 @@ export default function Home() {
 
             {/* Step 2 */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 h-full">
+              <div className="rounded-2xl p-8 border border-gray-700 h-full">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center font-bold text-white text-lg">
                   2
                 </div>
@@ -257,7 +257,7 @@ export default function Home() {
 
             {/* Step 3 */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 h-full">
+              <div className="rounded-2xl p-8 border border-gray-700 h-full">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full flex items-center justify-center font-bold text-white text-lg">
                   3
                 </div>
@@ -429,13 +429,11 @@ export default function Home() {
       </section>
       {/* CTA Section */}
       {/* Footer */}
-      <footer className="border-t border-gray-700 bg-gray-950 py-16">
+      <footer className="border-t border-gray-700 py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <h3 className="text-lg font-bold text-gray-100 mb-4">
-                JobPsych AI
-              </h3>
+              <h3 className="text-lg font-bold text-gray-100 mb-4">JobPsych</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Empowering professionals to unlock their full potential through
                 intelligent document analysis.

@@ -66,11 +66,40 @@
   --font-family-sans: var(--font-sans);
   --font-family-serif: var(--font-serif);
   --font-family-mono: var(--font-mono);
+
+  /* Copied semantic tokens from .github/copilot-instructions.md */
+  --bg-color: #e2dfd2;
+  --text-color: #0f172a;
+  --muted-text-color: rgba(15, 23, 42, 0.7);
+  --color-h1: #2c2416;
+  --color-h2: #3d3426;
+  --color-h3: #5a4e3c;
+  --color-body: #6b5f4e;
+  --color-secondary: #8a7f6e;
+  --color-link: #7a6340;
+  --color-accent: #5c7a5f;
+}
+
+/* Ensure variables are available at the CSS root and html/body fill viewport */
+:root {
+  --bg-color: #e2dfd2;
+  --text-color: #0f172a;
+  --muted-text-color: rgba(15, 23, 42, 0.7);
+  --color-h1: #2c2416;
+  --color-h2: #3d3426;
+  --color-h3: #5a4e3c;
+  --color-body: #6b5f4e;
+  --color-secondary: #8a7f6e;
+  --color-link: #7a6340;
+  --color-accent: #5c7a5f;
 }
 
 html,
 body {
-  @apply bg-gray-900;
+  height: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -184,7 +213,7 @@ form {
   }
 
   .navbar {
-    @apply flex flex-row justify-between items-center bg-gray-900 rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+    @apply flex flex-row justify-between items-center rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
   }
 
   .score-badge {
@@ -251,4 +280,90 @@ figcaption {
   to {
     opacity: 1;
   }
+}
+
+/* Semantic utility classes from .github/copilot-instructions.md */
+.text-h1 {
+  color: var(--color-h1);
+  font-family: var(--font-tinos);
+  font-weight: 900;
+}
+.text-h2 {
+  color: var(--color-h2);
+  font-family: var(--font-tinos);
+  font-weight: 700;
+}
+.text-h3 {
+  color: var(--color-h3);
+  font-family: var(--font-tinos);
+  font-weight: 700;
+}
+.text-body {
+  color: var(--color-body);
+  font-family: var(--font-family-sans);
+}
+.text-secondary {
+  color: var(--color-secondary);
+  font-family: var(--font-family-sans);
+}
+.text-link {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+.text-cta {
+  color: var(--text-color);
+  background: var(--color-accent);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Helper: root background mapping for light pages */
+.page-force-light {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Map common dark Tailwind utilities to semantic light tokens so components follow the theme.
+   These use escaped class selectors for variants like bg-gray-900/50. Use !important to override
+   the generated utility classes without modifying every component. */
+:root {
+  --panel-bg: #ffffff;
+  --panel-bg-2: rgba(255, 255, 255, 0.95);
+  --panel-border: rgba(15, 23, 42, 0.12);
+}
+
+/* Backgrounds */
+.bg-gray-800,
+.bg-gray-800\/80,
+.bg-gray-800\/95 {
+  background-color: var(--panel-bg) !important;
+}
+.bg-gray-700,
+.bg-gray-700\/50 {
+  background-color: var(--panel-bg-2) !important;
+}
+.bg-gray-900,
+.bg-gray-900\/50 {
+  background-color: var(--panel-bg-2) !important;
+}
+
+/* Text colors */
+.text-gray-100 {
+  color: var(--text-color) !important;
+}
+.text-gray-200 {
+  color: var(--color-body) !important;
+}
+.text-gray-400,
+.text-gray-400\/70 {
+  color: var(--muted-text-color) !important;
+}
+
+/* Borders & placeholders */
+.border-gray-600,
+.border-gray-700 {
+  border-color: var(--panel-border) !important;
+}
+.placeholder-gray-500::placeholder {
+  color: var(--muted-text-color) !important;
 }

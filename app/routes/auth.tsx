@@ -23,7 +23,7 @@ const Auth = () => {
   }, [auth.isAuthenticated, nextUrl, navigate]);
 
   return (
-    <main className="bg-gradient-to-b from-gray-900 via-gray-900 to-black min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+    <main className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
@@ -36,12 +36,12 @@ const Auth = () => {
           {/* Left Side - Features */}
           <div className="hidden md:flex flex-col gap-6">
             <div className="space-y-3">
-              <h2 className="text-4xl md:text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+              <h2 className="text-4xl md:text-5xl font-black bg-clip-text">
                 Your Documents,
                 <br />
                 Improved
               </h2>
-              <p className="text-lg text-gray-300">
+              <p className="text-lg">
                 Join users improving their documents with AI-driven content
                 checks, scoring, and structured feedback.
               </p>
