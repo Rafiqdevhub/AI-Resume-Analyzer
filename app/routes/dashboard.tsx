@@ -113,12 +113,12 @@ export default function Dashboard() {
   }
 
   return (
-    <main className="min-h-screen bg-[#090f14] text-slate-100">
-      <div className="relative overflow-hidden border-b border-cyan-900/40">
+    <main className="min-h-screen">
+      <div className="relative overflow-hidden border-b border-[var(--panel-border)]">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute -top-28 left-1/4 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl" />
-          <div className="absolute top-28 right-1/4 h-72 w-72 rounded-full bg-orange-400/20 blur-3xl" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.08),transparent_45%),radial-gradient(circle_at_80%_25%,rgba(251,146,60,0.10),transparent_40%),linear-gradient(180deg,#0a1118_0%,#090f14_80%)]" />
+          <div className="absolute -top-28 left-1/4 h-80 w-80 rounded-full bg-[#8fa993]/20 blur-3xl" />
+          <div className="absolute top-28 right-1/4 h-72 w-72 rounded-full bg-[#b79a72]/20 blur-3xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(92,122,95,0.10),transparent_45%),radial-gradient(circle_at_80%_25%,rgba(122,99,64,0.12),transparent_40%),linear-gradient(180deg,#e7e2d6_0%,#e2dfd2_80%)]" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 lg:px-8 lg:pt-12">
@@ -126,10 +126,10 @@ export default function Dashboard() {
             <div className="flex items-start gap-5">
               <Link
                 to="/"
-                className="group mt-1 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-200/20 bg-slate-900/70 shadow-[0_0_0_1px_rgba(34,211,238,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-x-0.5 hover:border-cyan-300/60 hover:bg-slate-800"
+                className="group mt-1 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[var(--panel-border)] bg-[var(--panel-bg)] shadow-[0_0_0_1px_rgba(122,99,64,0.10)] backdrop-blur-sm transition-all duration-300 hover:-translate-x-0.5 hover:border-[#bca887] hover:bg-[#f4ede1]"
               >
                 <svg
-                  className="h-5 w-5 text-cyan-200 transition-all duration-300 group-hover:text-cyan-100"
+                  className="h-5 w-5 text-[var(--color-body)] transition-all duration-300 group-hover:text-[var(--color-h2)]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -144,13 +144,13 @@ export default function Dashboard() {
               </Link>
 
               <div>
-                <p className="mb-2 inline-flex items-center rounded-full border border-cyan-300/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-100">
+                <p className="mb-2 inline-flex items-center rounded-full border border-[var(--card-sand)] bg-[var(--card-primary)] px-3 py-1 text-caption font-semibold uppercase tracking-[0.2em]">
                   Command Center
                 </p>
-                <h1 className="display-font text-4xl font-black leading-tight text-white md:text-6xl">
+                <h1 className="text-h1 drop-shadow-[0_1px_0_rgba(255,255,255,0.2)]">
                   Career Documents
                 </h1>
-                <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
+                <p className="mt-3 max-w-2xl text-body">
                   A focused workspace to monitor resume quality, track momentum,
                   and navigate your next applications faster.
                 </p>
@@ -159,7 +159,7 @@ export default function Dashboard() {
 
             <Link
               to="/upload"
-              className="group inline-flex items-center gap-3 self-start rounded-2xl border border-orange-200/20 bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-3.5 font-semibold text-white shadow-[0_12px_32px_-16px_rgba(251,146,60,0.85)] transition-all duration-300 hover:-translate-y-0.5 hover:from-orange-400 hover:to-amber-400 hover:shadow-[0_18px_40px_-15px_rgba(251,146,60,0.9)]"
+              className="group inline-flex items-center gap-3 self-start rounded-2xl border border-[var(--card-clay)] bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] px-6 py-3.5 font-semibold text-[var(--btn-primary-text)] shadow-[0_12px_32px_-16px_rgba(92,122,95,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#507053] hover:to-[#6f5938] hover:shadow-[0_18px_40px_-15px_rgba(92,122,95,0.7)]"
             >
               <svg
                 className="h-5 w-5 transition-transform duration-300 group-hover:rotate-90"
@@ -201,39 +201,39 @@ export default function Dashboard() {
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         {loadingResumes && (
-          <div className="rounded-3xl border border-cyan-900/50 bg-slate-900/55 px-6 py-20 text-center backdrop-blur-md md:px-10">
+          <div className="rounded-3xl border border-[var(--panel-border)] bg-[var(--panel-bg)] px-6 py-20 text-center backdrop-blur-md md:px-10">
             <div className="mx-auto mb-8 flex w-fit flex-col items-center">
-              <div className="absolute h-32 w-32 rounded-full bg-cyan-400/20 blur-2xl" />
+              <div className="absolute h-32 w-32 rounded-full blur-2xl" />
               <img
                 src="/images/resume-scan-2.gif"
-                className="relative h-32 w-32 rounded-2xl border border-cyan-200/20 object-cover"
+                className="relative h-32 w-32 rounded-2xl border border-[var(--panel-border)] object-cover"
                 alt="Loading your documents..."
               />
             </div>
-            <h3 className="mb-2 text-2xl font-black text-white md:text-3xl">
+            <h3 className="mb-2 text-h3 md:text-h2">
               Loading your documents...
             </h3>
-            <p className="mx-auto max-w-md text-slate-300">
+            <p className="mx-auto max-w-md text-body">
               We are syncing your collection and preparing the latest insights.
             </p>
             <div className="mt-8 flex justify-center gap-2">
-              <div className="pulse-stagger h-2.5 w-2.5 rounded-full bg-cyan-300" />
-              <div className="pulse-stagger delay-150 h-2.5 w-2.5 rounded-full bg-orange-300" />
-              <div className="pulse-stagger delay-300 h-2.5 w-2.5 rounded-full bg-cyan-200" />
+              <div className="pulse-stagger h-2.5 w-2.5 rounded-full" />
+              <div className="pulse-stagger delay-150 h-2.5 w-2.5 rounded-full" />
+              <div className="pulse-stagger delay-300 h-2.5 w-2.5 rounded-full" />
             </div>
           </div>
         )}
 
         {!loadingResumes && resumes.length === 0 && (
-          <div className="relative overflow-hidden rounded-3xl border border-cyan-800/30 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-cyan-950/40 px-8 py-24 text-center md:px-12">
-            <div className="absolute right-10 top-8 h-24 w-24 rounded-full border border-cyan-300/20" />
-            <div className="absolute bottom-12 left-12 h-16 w-16 rounded-full border border-orange-300/30" />
+          <div className="relative overflow-hidden rounded-3xl border border-[var(--panel-border)] bg-[var(--panel-bg)] px-8 py-24 text-center md:px-12">
+            <div className="absolute right-10 top-8 h-24 w-24 rounded-full border border-[#d8cbb7]" />
+            <div className="absolute bottom-12 left-12 h-16 w-16 rounded-full border border-[#d9c5a2]" />
             <div className="mx-auto mb-8 flex justify-center">
               <div className="relative">
-                <div className="absolute inset-0 rounded-3xl bg-cyan-500/25 blur-2xl" />
-                <div className="relative flex h-28 w-28 items-center justify-center rounded-3xl bg-gradient-to-br from-cyan-500 to-teal-500">
+                <div className="absolute inset-0 rounded-3xl blur-2xl" />
+                <div className="relative flex h-28 w-28 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5c7a5f] to-[#7a6340] text-white">
                   <svg
-                    className="h-14 w-14 text-white"
+                    className="h-14 w-14"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -248,17 +248,17 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <h2 className="display-font mb-4 text-4xl font-black text-white md:text-5xl">
+            <h2 className="display-font mb-4 text-h2 md:text-h1">
               Build Your First Analysis Set
             </h2>
-            <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-slate-300">
+            <p className="mx-auto mb-12 max-w-2xl text-lead">
               Upload your first resume package to get score breakdowns,
               structural feedback, and job-targeted improvement signals.
             </p>
 
             <Link
               to="/upload"
-              className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-teal-500 px-9 py-4 text-lg font-bold text-white shadow-[0_20px_42px_-18px_rgba(34,211,238,0.95)] transition-all duration-300 hover:-translate-y-0.5 hover:from-cyan-400 hover:to-teal-400"
+              className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] px-9 py-4 text-[var(--btn-primary-text)] cta-button-text shadow-[0_20px_42px_-18px_rgba(92,122,95,0.75)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#507053] hover:to-[#6f5938]"
             >
               <svg
                 className="h-6 w-6"
@@ -280,29 +280,24 @@ export default function Dashboard() {
 
         {!loadingResumes && resumes.length > 0 && (
           <div className="space-y-8">
-            <div className="rounded-3xl border border-cyan-900/35 bg-slate-900/50 p-5 backdrop-blur-sm md:p-6">
+            <div className="rounded-3xl border border-[var(--panel-border)] bg-[var(--panel-bg)] p-5 backdrop-blur-sm md:p-6">
               <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                 <div>
-                  <h2 className="mb-1 text-3xl font-black text-white">
-                    Your Documents Collection
-                  </h2>
-                  <p className="flex items-center gap-2 text-slate-300">
-                    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                  <h2 className="mb-1 text-h2">Your Documents Collection</h2>
+                  <p className="flex items-center gap-2 text-caption">
+                    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[var(--color-accent)]" />
                     {resumes.length} document{resumes.length !== 1 ? "s" : ""}{" "}
                     ready for career boost
                   </p>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <label
-                    htmlFor="sort-documents"
-                    className="text-sm text-slate-300"
-                  >
+                  <label htmlFor="sort-documents" className="text-caption">
                     Sort by
                   </label>
                   <select
                     id="sort-documents"
-                    className="rounded-xl border border-cyan-300/20 bg-slate-900/80 px-4 py-2.5 text-slate-100 outline-none transition-all duration-300 hover:border-cyan-200/40 focus:border-cyan-200/60 focus:ring-2 focus:ring-cyan-400/35"
+                    className="rounded-xl border border-[var(--panel-border)] bg-[var(--panel-bg-2)] px-4 py-2.5 text-[var(--color-body)] outline-none transition-all duration-300 hover:border-[#c5b59a] focus:border-[var(--color-link)] focus:ring-2 focus:ring-[#b79a72]/30"
                     aria-label="Sort documents by"
                     value={sortBy}
                     onChange={(event) =>
@@ -332,7 +327,7 @@ export default function Dashboard() {
                   }`}
                 >
                   <div className="relative rounded-2xl">
-                    <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500/0 via-cyan-500/20 to-orange-400/0 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-[#5c7a5f]/0 via-[#5c7a5f]/20 to-[#7a6340]/0 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
                     <div className="relative">
                       <ResumeCard resume={resume} />
                     </div>
@@ -369,27 +364,22 @@ export default function Dashboard() {
         }
 
         .dash-stat-card {
-          border: 1px solid rgba(34, 211, 238, 0.2);
-          background: linear-gradient(
-            145deg,
-            rgba(15, 23, 42, 0.92) 0%,
-            rgba(17, 24, 39, 0.75) 60%,
-            rgba(17, 24, 39, 0.45) 100%
-          );
+          border: 1px solid var(--panel-border);
+          background: var(--panel-bg);
           border-radius: 1rem;
           padding: 1.1rem 1.2rem;
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03),
-            0 18px 40px -28px rgba(34, 211, 238, 0.55);
+            0 18px 40px -28px rgba(122, 99, 64, 0.42);
           transition: transform 240ms ease, border-color 240ms ease;
         }
 
         .dash-stat-card:hover {
           transform: translateY(-2px);
-          border-color: rgba(34, 211, 238, 0.45);
+          border-color: rgba(122, 99, 64, 0.45);
         }
 
         .dash-stat-label {
-          color: rgba(226, 232, 240, 0.86);
+          color: var(--color-secondary);
           font-size: 0.78rem;
           letter-spacing: 0.14em;
           text-transform: uppercase;
@@ -398,7 +388,7 @@ export default function Dashboard() {
         }
 
         .dash-stat-value {
-          color: #ffffff;
+          color: var(--color-h2);
           font-size: 1.9rem;
           font-weight: 850;
           line-height: 1;

@@ -16,19 +16,19 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
   const colorScale =
     animatedScore >= 85
       ? {
-          start: "#34D399",
-          end: "#22D3EE",
+          start: "#5c7a5f",
+          end: "#7ea483",
           label: "Elite",
         }
       : animatedScore >= 70
         ? {
-            start: "#22D3EE",
-            end: "#818CF8",
+            start: "#7a6340",
+            end: "#a18455",
             label: "Strong",
           }
         : {
-            start: "#FB923C",
-            end: "#F43F5E",
+            start: "#b9804b",
+            end: "#c15e57",
             label: "Improve",
           };
 
@@ -76,7 +76,7 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
 
   return (
     <div className="relative h-[104px] w-[104px]">
-      <div className="absolute inset-0 rounded-full bg-cyan-300/10 blur-md" />
+      <div className="absolute inset-0 rounded-full bg-[var(--panel-bg-2)] blur-md" />
       <svg
         height="100%"
         width="100%"
@@ -94,7 +94,7 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
           cx="50"
           cy="50"
           r={normalizedRadius}
-          stroke="#334155"
+          stroke="rgba(15, 23, 42, 0.18)"
           strokeWidth={stroke}
           fill="transparent"
         />
@@ -114,8 +114,10 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
       </svg>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-        <span className="text-sm font-black text-white">{animatedScore}</span>
-        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300">
+        <span className="text-sm font-black text-[var(--color-h2)]">
+          {animatedScore}
+        </span>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-secondary)]">
           {colorScale.label}
         </span>
       </div>

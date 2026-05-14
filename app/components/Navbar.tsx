@@ -37,14 +37,14 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <Link to="/">
-        <p className="text-2xl font-bold text-gradient">JobPsych</p>
+        <p className="text-h4">JobPsych</p>
       </Link>
       <div className="flex items-center gap-6">
         {auth.isAuthenticated ? (
           <>
             <Link
               to="/dashboard"
-              className="text-gray-200 hover:text-gray-100 transition-colors"
+              className="text-[var(--color-link)] transition-colors hover:text-[var(--color-h3)]"
             >
               Dashboard
             </Link>
@@ -60,19 +60,19 @@ const Navbar = () => {
           <div className="relative" ref={menuRef}>
             <button
               onClick={toggleUserMenu}
-              className="flex items-center gap-3 px-3 py-2 rounded-full border border-gray-600 shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer"
+              className="flex items-center gap-3 px-3 py-2 rounded-full border border-[var(--panel-border)] shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer bg-[var(--panel-bg)]"
             >
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+              <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-semibold bg-gradient-to-r from-[#5c7a5f] to-[#7a6340]">
                 {auth.user.username.charAt(0).toUpperCase()}
               </div>
               <div className="flex flex-col items-start">
-                <span className="text-sm font-medium text-gray-100">
+                <span className="text-body font-medium">
                   {auth.user.email || auth.user.username}
                 </span>
-                <span className="text-xs text-gray-400">Account</span>
+                <span className="text-caption">Account</span>
               </div>
               <svg
-                className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
+                className={`w-4 h-4 text-[var(--color-secondary)] transition-transform duration-200 ${
                   showUserMenu ? "rotate-180" : ""
                 }`}
                 fill="none"
@@ -89,43 +89,47 @@ const Navbar = () => {
             </button>
 
             {showUserMenu && (
-              <div className="absolute right-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-lg border border-gray-600 py-1 z-50">
-                <div className="px-4 py-3 border-b border-gray-600">
+              <div className="absolute right-0 mt-2 w-64 rounded-lg shadow-lg border border-[var(--panel-border)] py-1 z-50 bg-[var(--panel-bg)]">
+                <div className="px-4 py-3 border-b border-[var(--panel-border)]">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-semibold bg-gradient-to-r from-[#5c7a5f] to-[#7a6340]">
                       {auth.user.username.charAt(0).toUpperCase()}
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-100">
+                      <p className="text-body font-medium">
                         {auth.user.email || auth.user.username}
                       </p>
-                      <p className="text-xs text-gray-300">Logged in</p>
+                      <p className="text-caption">Logged in</p>
                     </div>
                   </div>
-                  <div className="space-y-1 text-xs text-gray-300">
+                  <div className="space-y-1 text-xs text-[var(--color-secondary)]">
                     <div className="flex justify-between">
                       <span>Username:</span>
-                      <span className="font-medium">{auth.user.username}</span>
+                      <span className="font-medium text-[var(--color-body)]">
+                        {auth.user.username}
+                      </span>
                     </div>
                     {auth.user.email && (
                       <div className="flex justify-between">
                         <span>Email:</span>
-                        <span className="font-medium">{auth.user.email}</span>
+                        <span className="font-medium text-[var(--color-body)]">
+                          {auth.user.email}
+                        </span>
                       </div>
                     )}
                     <div className="flex justify-between">
                       <span>User ID:</span>
-                      <span className="font-medium text-gray-300">
+                      <span className="font-medium text-[var(--color-secondary)]">
                         {auth.user.uuid.slice(0, 8)}...
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="border-t border-gray-600 mt-1">
+                <div className="border-t border-[var(--panel-border)] mt-1">
                   <button
                     onClick={handleLogout}
-                    className="block w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-red-900/50 transition-colors duration-150 cursor-pointer"
+                    className="block w-full cursor-pointer px-4 py-2 text-left text-body transition-colors duration-150 hover:bg-[var(--card-primary)]"
                   >
                     Logout
                   </button>

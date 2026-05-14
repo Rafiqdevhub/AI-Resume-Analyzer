@@ -26,9 +26,9 @@ const Auth = () => {
     <main className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 right-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-[#5c7a5f]/20 blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-[#7a6340]/18 blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 right-0 h-96 w-96 rounded-full bg-[#b67d57]/16 blur-3xl animate-pulse delay-500"></div>
       </div>
 
       <div className="w-full max-w-6xl relative z-10">
@@ -36,12 +36,12 @@ const Auth = () => {
           {/* Left Side - Features */}
           <div className="hidden md:flex flex-col gap-6">
             <div className="space-y-3">
-              <h2 className="text-4xl md:text-5xl font-black bg-clip-text">
+              <h2 className="text-h2">
                 Your Documents,
                 <br />
                 Improved
               </h2>
-              <p className="text-lg">
+              <p className="text-lead">
                 Join users improving their documents with AI-driven content
                 checks, scoring, and structured feedback.
               </p>
@@ -51,7 +51,7 @@ const Auth = () => {
               {/* Feature 1 */}
               <div className="flex gap-4 group">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] transition-transform duration-300 group-hover:scale-110">
                     <svg
                       className="h-6 w-6 text-white"
                       fill="none"
@@ -68,10 +68,10 @@ const Auth = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-100 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-h4 transition-colors group-hover:text-[var(--color-link)]">
                     Content Quality
                   </h3>
-                  <p className="text-sm text-gray-400 mt-1">
+                  <p className="mt-1 text-body">
                     Improve clarity, relevance, and overall document strength
                     with AI-powered analysis
                   </p>
@@ -81,7 +81,7 @@ const Auth = () => {
               {/* Feature 2 */}
               <div className="flex gap-4 group">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-[#7a6340] to-[#5c7a5f] transition-transform duration-300 group-hover:scale-110">
                     <svg
                       className="h-6 w-6 text-white"
                       fill="none"
@@ -98,10 +98,10 @@ const Auth = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-100 group-hover:text-purple-400 transition-colors">
+                  <h3 className="text-h4 transition-colors group-hover:text-[var(--color-accent)]">
                     Fast Review
                   </h3>
-                  <p className="text-sm text-gray-400 mt-1">
+                  <p className="mt-1 text-body">
                     Get document insights in seconds, not hours
                   </p>
                 </div>
@@ -110,7 +110,7 @@ const Auth = () => {
               {/* Feature 3 */}
               <div className="flex gap-4 group">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-gradient-to-r from-pink-500 to-pink-600 group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-[#9b6c4b] to-[#b67d57] transition-transform duration-300 group-hover:scale-110">
                     <svg
                       className="h-6 w-6 text-white"
                       fill="none"
@@ -127,10 +127,10 @@ const Auth = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-100 group-hover:text-pink-400 transition-colors">
+                  <h3 className="text-h4 transition-colors group-hover:text-[var(--color-link)]">
                     Targeted Improvements
                   </h3>
-                  <p className="text-sm text-gray-400 mt-1">
+                  <p className="mt-1 text-body">
                     Personalized guidance tailored to the content you want to
                     improve
                   </p>
@@ -138,20 +138,18 @@ const Auth = () => {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 pt-8 mt-8 border-t border-gray-700">
+              <div className="mt-8 grid grid-cols-3 gap-4 border-t border-[var(--panel-border)] pt-8">
                 <div className="text-center">
-                  <p className="text-2xl font-bold text-blue-400">10K+</p>
-                  <p className="text-xs text-gray-400 mt-1">
-                    Documents Analyzed
-                  </p>
+                  <p className="text-h3">10K+</p>
+                  <p className="mt-1 text-caption">Documents Analyzed</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl font-bold text-purple-400">95%</p>
-                  <p className="text-xs text-gray-400 mt-1">Success Rate</p>
+                  <p className="text-h3">95%</p>
+                  <p className="mt-1 text-caption">Success Rate</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl font-bold text-pink-400">4.9★</p>
-                  <p className="text-xs text-gray-400 mt-1">User Rating</p>
+                  <p className="text-h3">4.9★</p>
+                  <p className="mt-1 text-caption">User Rating</p>
                 </div>
               </div>
             </div>
@@ -160,10 +158,10 @@ const Auth = () => {
           {/* Right Side - Sign In Form */}
           <div className="w-full max-w-md mx-auto md:mx-0">
             <div className="gradient-border shadow-2xl">
-              <section className="flex flex-col gap-8 bg-gray-800/80 backdrop-blur-xl rounded-2xl p-10 border border-gray-700/50">
+              <section className="flex flex-col gap-8 rounded-2xl border border-[var(--panel-border)] bg-[var(--panel-bg-2)] p-10 backdrop-blur-xl">
                 <button
                   onClick={() => navigate("/")}
-                  className="flex items-center gap-2 text-gray-400 hover:text-gray-200 transition-colors duration-200 self-start group cursor-pointer"
+                  className="group flex cursor-pointer items-center gap-2 self-start text-caption transition-colors duration-200 hover:text-[var(--color-h2)]"
                 >
                   <svg
                     className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-200"
@@ -178,25 +176,23 @@ const Auth = () => {
                       d="M10 19l-7-7m0 0l7-7m-7 7h18"
                     />
                   </svg>
-                  <span className="text-sm font-medium">Back to Home</span>
+                  <span className="text-body font-medium">Back to Home</span>
                 </button>
 
                 <div className="flex flex-col items-center gap-6 text-center">
-                  <div className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
-                    <span className="text-sm font-semibold text-blue-300">
+                  <div className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--card-sand)] bg-gradient-to-r from-[#5c7a5f]/15 to-[#7a6340]/15 px-4 py-2 backdrop-blur-sm">
+                    <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--color-accent)]"></span>
+                    <span className="auth-pill-label font-semibold">
                       AI-Powered Document Analyzer
                     </span>
                   </div>
 
                   <div>
-                    <h1 className="text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-3">
-                      Welcome Back
-                    </h1>
-                    <h2 className="text-lg text-gray-200 mb-3">
+                    <h1 className="mb-3 text-h1">Welcome Back</h1>
+                    <h2 className="mb-3 text-h3">
                       Ready to improve your documents?
                     </h2>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-body">
                       Sign in to access AI-powered content scoring, quality
                       checks, and actionable recommendations
                     </p>
@@ -206,7 +202,7 @@ const Auth = () => {
                 <div className="flex flex-col gap-4">
                   {isLoading ? (
                     <button
-                      className="w-full py-4 px-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl text-white font-semibold text-lg flex items-center justify-center gap-3 animate-pulse"
+                      className="flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] px-6 py-4 text-[var(--btn-primary-text)] cta-button-text animate-pulse"
                       disabled
                     >
                       <svg
@@ -234,14 +230,14 @@ const Auth = () => {
                     <>
                       {auth.isAuthenticated ? (
                         <button
-                          className="w-full py-4 px-6 bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 rounded-xl text-white font-semibold text-lg hover:shadow-lg hover:shadow-red-500/50 transition-all duration-200 transform hover:scale-[1.02] cursor-pointer"
+                          className="w-full cursor-pointer rounded-xl bg-gradient-to-r from-[#7a6340] to-[#5c7a5f] px-6 py-4 text-[var(--btn-primary-text)] cta-button-text transition-all duration-200 hover:scale-[1.02] hover:from-[#6f5938] hover:to-[#507053] hover:shadow-lg hover:shadow-[#7a6340]/25"
                           onClick={auth.signOut}
                         >
                           <span>Log Out</span>
                         </button>
                       ) : (
                         <button
-                          className="w-full py-4 px-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-xl text-white font-semibold text-lg flex items-center justify-center gap-3 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-200 transform hover:scale-[1.02] cursor-pointer group"
+                          className="group flex w-full cursor-pointer items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] px-6 py-4 text-[var(--btn-primary-text)] cta-button-text transition-all duration-200 hover:scale-[1.02] hover:from-[#507053] hover:to-[#6f5938] hover:shadow-lg hover:shadow-[#5c7a5f]/30"
                           onClick={auth.signIn}
                         >
                           <svg
@@ -258,27 +254,27 @@ const Auth = () => {
                   )}
                 </div>
 
-                <div className="space-y-4 pt-4 border-t border-gray-700/50">
+                <div className="space-y-4 border-t border-[var(--panel-border)] pt-4">
                   <div className="flex items-start gap-3">
                     <svg
-                      className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5"
+                      className="mt-0.5 h-5 w-5 flex-shrink-0 text-[var(--color-accent)]"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                     </svg>
                     <div>
-                      <p className="text-xs font-semibold text-gray-300">
+                      <p className="text-caption font-semibold">
                         Why users choose JobPsych AI:
                       </p>
-                      <p className="text-xs text-gray-400 mt-1">
+                      <p className="mt-1 text-caption">
                         Real-time document analysis, actionable quality
                         feedback, and clear next-step recommendations.
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-center gap-2 text-xs text-gray-400 pt-2">
+                  <div className="flex items-center justify-center gap-2 pt-2 text-caption">
                     <svg
                       className="w-4 h-4"
                       fill="none"

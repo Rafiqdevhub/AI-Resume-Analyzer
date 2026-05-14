@@ -9,7 +9,7 @@ interface AccordionContextType {
 }
 
 const AccordionContext = createContext<AccordionContextType | undefined>(
-  undefined
+  undefined,
 );
 
 const useAccordion = () => {
@@ -34,7 +34,7 @@ export const Accordion: React.FC<AccordionProps> = ({
   className = "",
 }) => {
   const [activeItems, setActiveItems] = useState<string[]>(
-    defaultOpen ? [defaultOpen] : []
+    defaultOpen ? [defaultOpen] : [],
   );
 
   const toggleItem = (id: string) => {
@@ -72,7 +72,9 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
   className = "",
 }) => {
   return (
-    <div className={`overflow-hidden border-b border-gray-200 ${className}`}>
+    <div
+      className={`overflow-hidden border-b border-[var(--panel-border)] ${className}`}
+    >
       {children}
     </div>
   );
@@ -102,7 +104,7 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
         "rotate-180": isActive,
       })}
       fill="none"
-      stroke="#98A2B3"
+      stroke="var(--color-secondary)"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -125,7 +127,7 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
       className={`
         w-full px-4 py-3 text-left
         focus:outline-none
-        transition-colors duration-200 flex items-center justify-between cursor-pointer
+        transition-colors duration-200 flex items-center justify-between cursor-pointer text-[var(--color-h2)]
         ${className}
       `}
     >
@@ -160,7 +162,7 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({
         ${className}
       `}
     >
-      <div className="px-4 py-3 ">{children}</div>
+      <div className="px-4 py-3 text-[var(--color-body)]">{children}</div>
     </div>
   );
 };

@@ -32,26 +32,20 @@ export default function Home() {
       {/* Hero Section with Animated Background */}
       <section className="relative  flex items-center justify-center pt-0 pb-10 overflow-hidden">
         {/* Animated gradient background */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96  rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96  rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 right-0 w-96 h-96 rounded-full blur-3xl animate-pulse delay-500"></div>
-        </div>
-
         <div className="page-heading max-w-6xl mx-auto px-4 text-center relative z-10">
-          <div className="inline-flex items-center justify-center gap-2 mb-8 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
-            <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
-            <span className="text-sm font-semibold">
+          <div className="inline-flex items-center justify-center gap-2 mb-8 px-4 py-2 bg-[var(--card-primary)] rounded-full border border-[var(--card-sand)] backdrop-blur-sm">
+            <span className="w-2 h-2 bg-[var(--color-accent)] rounded-full animate-pulse"></span>
+            <span className="text-caption font-semibold">
               AI-Powered Career Intelligence Platform
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-6 leading-tight">
+          <h1 className="text-h1 drop-shadow-[0_1px_0_rgba(255,255,255,0.2)]">
             Transform Your Career with AI-Based Career Readiness and Interview
             Preparation System
           </h1>
 
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed">
+          <p className="text-lead max-w-3xl mx-auto mb-12">
             Unlock the power of AI-driven document analysis. Get real-time
             quality insights, overcome ATS barriers, and position yourself for
             success with our Career Intelligence Assistant.
@@ -60,7 +54,7 @@ export default function Home() {
           {/* CTA Button */}
           <button
             onClick={handleUploadClick}
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 mb-8 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 mb-8 bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] hover:from-[#507053] hover:to-[#6f5938] text-[var(--btn-primary-text)] cta-button-text rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
           >
             <svg
               className="w-5 h-5"
@@ -81,18 +75,18 @@ export default function Home() {
           </button>
 
           {/* Stats under CTA */}
-          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8 border-t border-gray-700">
+          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8 border-t border-[var(--panel-border)]">
             <div className="text-center">
-              <p className="text-3xl font-bold text-blue-400">10K+</p>
-              <p className="text-sm text-gray-400 mt-1">Documents Analyzed</p>
+              <p className="text-h3">10K+</p>
+              <p className="text-caption mt-1">Documents Analyzed</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-purple-400">95%</p>
-              <p className="text-sm text-gray-400 mt-1">Success Rate</p>
+              <p className="text-h3">95%</p>
+              <p className="text-caption mt-1">Success Rate</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-pink-400">24/7</p>
-              <p className="text-sm text-gray-400 mt-1">AI Support</p>
+              <p className="text-h3">24/7</p>
+              <p className="text-caption mt-1">AI Support</p>
             </div>
           </div>
         </div>
@@ -101,10 +95,8 @@ export default function Home() {
       <section className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl mb-6">
-              Why Choose JobPsych AI?
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <h2 className="text-h2 mb-6">Why Choose JobPsych AI?</h2>
+            <p className="text-lead max-w-3xl mx-auto">
               Powered by cutting-edge AI technology, our Career Intelligence
               platform delivers comprehensive analysis with precision and
               actionable insights.
@@ -113,10 +105,10 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="group relative bg-gradient-to-br from-blue-900/20 to-blue-900/5 rounded-2xl p-8 border border-blue-500/30 hover:border-blue-500/60 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="group relative rounded-2xl border border-[var(--panel-border)] bg-[var(--panel-bg)] p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[#c5b59a] hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#5c7a5f]/8 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <svg
                     className="w-8 h-8 text-white"
                     fill="none"
@@ -131,10 +123,8 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-100 mb-4">
-                  Smart Analysis
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
+                <h3 className="text-h3 mb-4">Smart Analysis</h3>
+                <p className="text-body">
                   Our intelligent AI scans your documents for ATS compatibility,
                   identifies critical keywords, and optimizes formatting in
                   real-time for maximum impact.
@@ -143,10 +133,10 @@ export default function Home() {
             </div>
 
             {/* Card 2 */}
-            <div className="group relative bg-gradient-to-br from-purple-900/20 to-purple-900/5 rounded-2xl p-8 border border-purple-500/30 hover:border-purple-500/60 shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="group relative rounded-2xl border border-[var(--panel-border)] bg-[var(--panel-bg)] p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[#c5b59a] hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#7a6340]/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#7a6340] to-[#9a7d53] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <svg
                     className="w-8 h-8 text-white"
                     fill="none"
@@ -161,10 +151,8 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-100 mb-4">
-                  Precision Scoring
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
+                <h3 className="text-h3 mb-4">Precision Scoring</h3>
+                <p className="text-body">
                   Get multi-dimensional evaluation across tone, content quality,
                   structure, and skills alignment. Our advanced metrics guide
                   you to excellence.
@@ -173,10 +161,10 @@ export default function Home() {
             </div>
 
             {/* Card 3 */}
-            <div className="group relative bg-gradient-to-br from-pink-900/20 to-pink-900/5 rounded-2xl p-8 border border-pink-500/30 hover:border-pink-500/60 shadow-lg hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-600/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="group relative rounded-2xl border border-[var(--panel-border)] bg-[var(--panel-bg)] p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[#c5b59a] hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#b67d57]/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#9b6c4b] to-[#b67d57] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <svg
                     className="w-8 h-8 text-white"
                     fill="none"
@@ -191,10 +179,8 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-100 mb-4">
-                  Expert Guidance
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
+                <h3 className="text-h3 mb-4">Expert Guidance</h3>
+                <p className="text-body">
                   Personalized recommendations aligned with your career goals.
                   Our AI analyzes your profile and delivers insights tailored to
                   your success.
@@ -207,21 +193,19 @@ export default function Home() {
       {/* How It Works Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl md:text-6xl font-black text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300">
+          <h2 className="text-h2 text-center mb-20">
             Three Simple Steps to Success
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
             {/* Step 1 */}
             <div className="relative">
-              <div className="rounded-2xl p-8 border border-gray-700 h-full">
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center font-bold text-white text-lg">
+              <div className="rounded-2xl p-8 border border-[var(--panel-border)] bg-[var(--panel-bg)] h-full">
+                <div className="absolute -top-4 -left-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] text-lg font-bold text-white">
                   1
                 </div>
-                <h3 className="text-2xl font-bold text-gray-100 mt-4 mb-4">
-                  Upload Your Documents
-                </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <h3 className="text-h3 mt-4 mb-4">Upload Your Documents</h3>
+                <p className="text-body">
                   Simply upload your resume, cover letter, or any professional
                   document. Our platform supports PDF, DOC, and other common
                   formats.
@@ -231,19 +215,17 @@ export default function Home() {
 
             {/* Arrow */}
             <div className="hidden md:flex items-center justify-center">
-              <div className="text-gray-600 text-4xl">→</div>
+              <div className="text-[var(--color-secondary)] text-4xl">→</div>
             </div>
 
             {/* Step 2 */}
             <div className="relative">
-              <div className="rounded-2xl p-8 border border-gray-700 h-full">
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center font-bold text-white text-lg">
+              <div className="rounded-2xl p-8 border border-[var(--panel-border)] bg-[var(--panel-bg)] h-full">
+                <div className="absolute -top-4 -left-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-[#7a6340] to-[#9b6c4b] text-lg font-bold text-white">
                   2
                 </div>
-                <h3 className="text-2xl font-bold text-gray-100 mt-4 mb-4">
-                  AI Analysis
-                </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <h3 className="text-h3 mt-4 mb-4">AI Analysis</h3>
+                <p className="text-body">
                   Our advanced AI thoroughly analyzes your documents for
                   quality, impact, and ATS optimization within seconds.
                 </p>
@@ -252,19 +234,17 @@ export default function Home() {
 
             {/* Arrow */}
             <div className="hidden md:flex items-center justify-center">
-              <div className="text-gray-600 text-4xl">→</div>
+              <div className="text-[var(--color-secondary)] text-4xl">→</div>
             </div>
 
             {/* Step 3 */}
             <div className="relative">
-              <div className="rounded-2xl p-8 border border-gray-700 h-full">
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full flex items-center justify-center font-bold text-white text-lg">
+              <div className="rounded-2xl p-8 border border-[var(--panel-border)] bg-[var(--panel-bg)] h-full">
+                <div className="absolute -top-4 -left-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-[#9b6c4b] to-[#b67d57] text-lg font-bold text-white">
                   3
                 </div>
-                <h3 className="text-2xl font-bold text-gray-100 mt-4 mb-4">
-                  Get Insights & Improve
-                </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <h3 className="text-h3 mt-4 mb-4">Get Insights & Improve</h3>
+                <p className="text-body">
                   Receive detailed feedback, actionable recommendations, and a
                   comprehensive quality score to elevate your professional
                   documents.
@@ -275,9 +255,9 @@ export default function Home() {
         </div>
       </section>
       {/* Features Highlight Section */}
-      <section className="py-24 bg-gray-900/50">
+      <section className="py-24 bg-[var(--card-linen)]">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl md:text-6xl font-black text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-300">
+          <h2 className="text-h2 text-center mb-20">
             Powerful Features for Career Success
           </h2>
 
@@ -285,7 +265,7 @@ export default function Home() {
             <div className="space-y-6">
               <div className="flex gap-4 group">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] transition-transform duration-300 group-hover:scale-110">
                     <svg
                       className="h-6 w-6 text-white"
                       fill="none"
@@ -302,10 +282,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-100">
-                    Real-time ATS Compatibility
-                  </h3>
-                  <p className="text-gray-400 mt-2">
+                  <h3 className="text-h4">Real-time ATS Compatibility</h3>
+                  <p className="text-body mt-2">
                     Ensure your documents pass Applicant Tracking Systems with
                     our intelligent keyword optimization.
                   </p>
@@ -314,7 +292,7 @@ export default function Home() {
 
               <div className="flex gap-4 group">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-r from-purple-500 to-purple-600 group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#7a6340] to-[#9a7d53] transition-transform duration-300 group-hover:scale-110">
                     <svg
                       className="h-6 w-6 text-white"
                       fill="none"
@@ -331,10 +309,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-100">
-                    Multi-Dimensional Scoring
-                  </h3>
-                  <p className="text-gray-400 mt-2">
+                  <h3 className="text-h4">Multi-Dimensional Scoring</h3>
+                  <p className="text-body mt-2">
                     Get evaluated across tone, content quality, structure, and
                     skills alignment for comprehensive improvement.
                   </p>
@@ -343,7 +319,7 @@ export default function Home() {
 
               <div className="flex gap-4 group">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-r from-pink-500 to-pink-600 group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#9b6c4b] to-[#b67d57] transition-transform duration-300 group-hover:scale-110">
                     <svg
                       className="h-6 w-6 text-white"
                       fill="none"
@@ -360,10 +336,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-100">
-                    Smart Recommendations
-                  </h3>
-                  <p className="text-gray-400 mt-2">
+                  <h3 className="text-h4">Smart Recommendations</h3>
+                  <p className="text-body mt-2">
                     Receive AI-powered suggestions tailored to your profile and
                     career aspirations.
                   </p>
@@ -372,7 +346,7 @@ export default function Home() {
 
               <div className="flex gap-4 group">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#6d8a70] to-[#5c7a5f] transition-transform duration-300 group-hover:scale-110">
                     <svg
                       className="h-6 w-6 text-white"
                       fill="none"
@@ -389,10 +363,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-100">
-                    Instant Processing
-                  </h3>
-                  <p className="text-gray-400 mt-2">
+                  <h3 className="text-h4">Instant Processing</h3>
+                  <p className="text-body mt-2">
                     Upload and get comprehensive analysis in seconds, not hours.
                   </p>
                 </div>
@@ -400,26 +372,20 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-2xl p-8 border border-blue-500/20">
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl"></div>
+              <div className="bg-[var(--panel-bg)] rounded-2xl p-8 border border-[var(--panel-border)]">
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#5c7a5f]/10 rounded-full blur-2xl"></div>
                 <div className="relative z-10 space-y-4">
-                  <div className="bg-gray-800 rounded-xl p-4 border border-gray-700">
-                    <p className="text-sm text-gray-400">Quality Score</p>
-                    <p className="text-3xl font-bold text-blue-400 mt-2">
-                      92/100
-                    </p>
+                  <div className="bg-[var(--panel-bg)] rounded-xl p-4 border border-[var(--panel-border)]">
+                    <p className="text-caption">Quality Score</p>
+                    <p className="text-h3 mt-2">92/100</p>
                   </div>
-                  <div className="bg-gray-800 rounded-xl p-4 border border-gray-700">
-                    <p className="text-sm text-gray-400">ATS Pass Rate</p>
-                    <p className="text-3xl font-bold text-purple-400 mt-2">
-                      98%
-                    </p>
+                  <div className="bg-[var(--panel-bg)] rounded-xl p-4 border border-[var(--panel-border)]">
+                    <p className="text-caption">ATS Pass Rate</p>
+                    <p className="text-h3 mt-2">98%</p>
                   </div>
-                  <div className="bg-gray-800 rounded-xl p-4 border border-gray-700">
-                    <p className="text-sm text-gray-400">Career Impact</p>
-                    <p className="text-3xl font-bold text-pink-400 mt-2">
-                      Excellent
-                    </p>
+                  <div className="bg-[var(--panel-bg)] rounded-xl p-4 border border-[var(--panel-border)]">
+                    <p className="text-caption">Career Impact</p>
+                    <p className="mt-2 text-h3">Excellent</p>
                   </div>
                 </div>
               </div>
@@ -427,27 +393,24 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* CTA Section */}
       {/* Footer */}
-      <footer className="border-t border-gray-700 py-16">
+      <footer className="border-t border-[var(--panel-border)] py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <h3 className="text-lg font-bold text-gray-100 mb-4">JobPsych</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <h3 className="text-h4 mb-4">JobPsych</h3>
+              <p className="text-body">
                 Empowering professionals to unlock their full potential through
                 intelligent document analysis.
               </p>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-gray-100 mb-4 uppercase">
-                Product
-              </h4>
+              <p className="footer-heading mb-4 uppercase">Product</p>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                    className="text-body transition-colors hover:text-[var(--color-link)]"
                   >
                     Features
                   </a>
@@ -455,7 +418,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                    className="text-body transition-colors hover:text-[var(--color-link)]"
                   >
                     Pricing
                   </a>
@@ -463,7 +426,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                    className="text-body transition-colors hover:text-[var(--color-link)]"
                   >
                     Security
                   </a>
@@ -471,14 +434,12 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-gray-100 mb-4 uppercase">
-                Company
-              </h4>
+              <p className="footer-heading mb-4 uppercase">Company</p>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                    className="text-body transition-colors hover:text-[var(--color-link)]"
                   >
                     About
                   </a>
@@ -486,7 +447,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                    className="text-body transition-colors hover:text-[var(--color-link)]"
                   >
                     Blog
                   </a>
@@ -494,7 +455,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                    className="text-body transition-colors hover:text-[var(--color-link)]"
                   >
                     Contact
                   </a>
@@ -502,14 +463,12 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-gray-100 mb-4 uppercase">
-                Legal
-              </h4>
+              <p className="footer-heading mb-4 uppercase">Legal</p>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                    className="text-body transition-colors hover:text-[var(--color-link)]"
                   >
                     Privacy
                   </a>
@@ -517,7 +476,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                    className="text-body transition-colors hover:text-[var(--color-link)]"
                   >
                     Terms
                   </a>
@@ -525,7 +484,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                    className="text-body transition-colors hover:text-[var(--color-link)]"
                   >
                     Cookie Policy
                   </a>
@@ -534,8 +493,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm text-center md:text-left mb-4 md:mb-0">
+          <div className="border-t border-[var(--panel-border)] pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-caption text-center md:text-left mb-4 md:mb-0">
               © 2026 JobPsych AI. Your Career Intelligence Assistant. All
               rights reserved.
             </p>

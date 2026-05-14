@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { formatSize } from "~/lib/utils";
 
@@ -13,7 +13,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
 
       onFileSelect?.(file);
     },
-    [onFileSelect]
+    [onFileSelect],
   );
 
   const maxFileSize = 20 * 1024 * 1024; // 20MB in bytes
@@ -29,7 +29,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
   const file = acceptedFiles[0] || null;
 
   return (
-    <div className="w-full gradient-border">
+    <div className="w-full rounded-2xl border border-[color:var(--panel-border)] bg-[var(--bg-color)] p-4">
       <div {...getRootProps()}>
         <input {...getInputProps()} />
 
@@ -42,10 +42,10 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
               <img src="/images/pdf.png" alt="pdf" className="size-10" />
               <div className="flex items-center space-x-3">
                 <div>
-                  <p className="text-sm font-medium text-gray-300 truncate max-w-xs">
+                  <p className="max-w-xs truncate text-sm font-medium text-[var(--color-h2)]">
                     {file.name}
                   </p>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-[var(--color-secondary)]">
                     {formatSize(file.size)}
                   </p>
                 </div>
@@ -64,11 +64,11 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
               <div className="mx-auto w-16 h-16 flex items-center justify-center mb-2">
                 <img src="/icons/info.svg" alt="upload" className="size-20" />
               </div>
-              <p className="text-lg text-gray-300">
+              <p className="text-lg text-[var(--color-body)]">
                 <span className="font-semibold">Click to upload a file</span> or
                 drag and drop
               </p>
-              <p className="text-lg text-gray-300">
+              <p className="text-lg text-[var(--color-body)]">
                 PDFs only, up to {formatSize(maxFileSize)}
               </p>
             </div>
