@@ -27,25 +27,31 @@ export default function Home() {
   };
 
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-[#171717]">
       <Navbar />
-      {/* Hero Section with Animated Background */}
-      <section className="relative  flex items-center justify-center pt-0 pb-10 overflow-hidden">
-        {/* Animated gradient background */}
-        <div className="page-heading max-w-6xl mx-auto px-4 text-center relative z-10">
-          <div className="inline-flex items-center justify-center gap-2 mb-8 px-4 py-2 bg-[var(--card-primary)] rounded-full border border-[var(--card-sand)] backdrop-blur-sm">
-            <span className="w-2 h-2 bg-[var(--color-accent)] rounded-full animate-pulse"></span>
-            <span className="text-caption font-semibold">
+
+      {/* Hero Section */}
+      <section className="relative flex items-center justify-center pt-8 pb-16 overflow-hidden">
+        {/* Ambient background glows */}
+        <div className="absolute inset-0 -z-10 pointer-events-none">
+          <div className="absolute -top-20 left-1/3 h-96 w-96 rounded-full bg-[#d4af37]/5 blur-3xl" />
+          <div className="absolute top-1/2 right-1/4 h-80 w-80 rounded-full bg-[#f5e6c8]/3 blur-3xl" />
+        </div>
+
+        <div className="page-heading max-w-5xl mx-auto px-4 text-center relative z-10">
+          <div className="inline-flex items-center justify-center gap-2 mb-8 px-5 py-2.5 rounded-full border border-[rgba(245,230,200,0.08)] bg-[linear-gradient(145deg,#242424,#1c1c1c)] shadow-[var(--shadow-clay-sm)]">
+            <span className="w-2.5 h-2.5 bg-[#d4af37] rounded-full animate-pulse shadow-[0_0_8px_#d4af37]"></span>
+            <span className="text-xs font-bold tracking-wider uppercase text-[#f5e6c8]">
               AI-Powered Career Intelligence Platform
             </span>
           </div>
 
-          <h1 className="text-h1 drop-shadow-[0_1px_0_rgba(255,255,255,0.2)]">
+          <h1 className="text-h1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] max-w-4xl mx-auto">
             Transform Your Career with AI-Based Career Readiness and Interview
-            Preparation System
+            Preparation
           </h1>
 
-          <p className="text-lead max-w-3xl mx-auto mb-12">
+          <p className="text-lead max-w-2xl mx-auto mt-6 mb-10 text-[#dfd0b5]">
             Unlock the power of AI-driven document analysis. Get real-time
             quality insights, overcome ATS barriers, and position yourself for
             success with our Career Intelligence Assistant.
@@ -54,7 +60,7 @@ export default function Home() {
           {/* CTA Button */}
           <button
             onClick={handleUploadClick}
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 mb-8 bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] hover:from-[#507053] hover:to-[#6f5938] text-[var(--btn-primary-text)] cta-button-text rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
+            className="cta-button mb-12 text-base font-black tracking-wide"
           >
             <svg
               className="w-5 h-5"
@@ -65,7 +71,7 @@ export default function Home() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={2.4}
                 d="M12 4v16m8-8H4"
               />
             </svg>
@@ -75,28 +81,35 @@ export default function Home() {
           </button>
 
           {/* Stats under CTA */}
-          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-8 border-t border-[var(--panel-border)]">
-            <div className="text-center">
-              <p className="text-h3">10K+</p>
-              <p className="text-caption mt-1">Documents Analyzed</p>
+          <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto pt-8 border-t border-[rgba(245,230,200,0.08)]">
+            <div className="clay-card-secondary p-5 text-center">
+              <p className="text-3xl font-black text-[#d4af37]">10K+</p>
+              <p className="text-xs text-[#6b7280] font-semibold tracking-wider uppercase mt-1">
+                Documents Analyzed
+              </p>
             </div>
-            <div className="text-center">
-              <p className="text-h3">95%</p>
-              <p className="text-caption mt-1">Success Rate</p>
+            <div className="clay-card-secondary p-5 text-center">
+              <p className="text-3xl font-black text-[#d4af37]">95%</p>
+              <p className="text-xs text-[#6b7280] font-semibold tracking-wider uppercase mt-1">
+                Success Rate
+              </p>
             </div>
-            <div className="text-center">
-              <p className="text-h3">24/7</p>
-              <p className="text-caption mt-1">AI Support</p>
+            <div className="clay-card-secondary p-5 text-center">
+              <p className="text-3xl font-black text-[#d4af37]">24/7</p>
+              <p className="text-xs text-[#6b7280] font-semibold tracking-wider uppercase mt-1">
+                AI Support
+              </p>
             </div>
           </div>
         </div>
-      </section>{" "}
+      </section>
+
       {/* Why Choose Us Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-h2 mb-6">Why Choose JobPsych AI?</h2>
-            <p className="text-lead max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-h2 mb-4">Why Choose JobPsych AI?</h2>
+            <p className="text-lead max-w-2xl mx-auto">
               Powered by cutting-edge AI technology, our Career Intelligence
               platform delivers comprehensive analysis with precision and
               actionable insights.
@@ -105,12 +118,11 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="group relative rounded-2xl border border-[var(--panel-border)] bg-[var(--panel-bg)] p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[#c5b59a] hover:shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#5c7a5f]/8 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="clay-card group transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-[linear-gradient(145deg,#292929,#1c1c1c)] shadow-[var(--shadow-clay-sm)] border border-[rgba(245,230,200,0.08)] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
                   <svg
-                    className="w-8 h-8 text-white"
+                    className="w-7 h-7 text-[#d4af37]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -123,8 +135,8 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-h3 mb-4">Smart Analysis</h3>
-                <p className="text-body">
+                <h3 className="text-h3 mb-3">Smart Analysis</h3>
+                <p className="text-body text-sm leading-relaxed">
                   Our intelligent AI scans your documents for ATS compatibility,
                   identifies critical keywords, and optimizes formatting in
                   real-time for maximum impact.
@@ -133,12 +145,11 @@ export default function Home() {
             </div>
 
             {/* Card 2 */}
-            <div className="group relative rounded-2xl border border-[var(--panel-border)] bg-[var(--panel-bg)] p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[#c5b59a] hover:shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#7a6340]/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#7a6340] to-[#9a7d53] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="clay-card group transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-[linear-gradient(145deg,#292929,#1c1c1c)] shadow-[var(--shadow-clay-sm)] border border-[rgba(245,230,200,0.08)] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
                   <svg
-                    className="w-8 h-8 text-white"
+                    className="w-7 h-7 text-[#d4af37]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -151,8 +162,8 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-h3 mb-4">Precision Scoring</h3>
-                <p className="text-body">
+                <h3 className="text-h3 mb-3">Precision Scoring</h3>
+                <p className="text-body text-sm leading-relaxed">
                   Get multi-dimensional evaluation across tone, content quality,
                   structure, and skills alignment. Our advanced metrics guide
                   you to excellence.
@@ -161,12 +172,11 @@ export default function Home() {
             </div>
 
             {/* Card 3 */}
-            <div className="group relative rounded-2xl border border-[var(--panel-border)] bg-[var(--panel-bg)] p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[#c5b59a] hover:shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#b67d57]/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#9b6c4b] to-[#b67d57] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="clay-card group transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-[linear-gradient(145deg,#292929,#1c1c1c)] shadow-[var(--shadow-clay-sm)] border border-[rgba(245,230,200,0.08)] flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
                   <svg
-                    className="w-8 h-8 text-white"
+                    className="w-7 h-7 text-[#d4af37]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -179,8 +189,8 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-h3 mb-4">Expert Guidance</h3>
-                <p className="text-body">
+                <h3 className="text-h3 mb-3">Expert Guidance</h3>
+                <p className="text-body text-sm leading-relaxed">
                   Personalized recommendations aligned with your career goals.
                   Our AI analyzes your profile and delivers insights tailored to
                   your success.
@@ -190,84 +200,70 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* How It Works Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-h2 text-center mb-20">
+          <h2 className="text-h2 text-center mb-16">
             Three Simple Steps to Success
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
             {/* Step 1 */}
-            <div className="relative">
-              <div className="rounded-2xl p-8 border border-[var(--panel-border)] bg-[var(--panel-bg)] h-full">
-                <div className="absolute -top-4 -left-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] text-lg font-bold text-white">
-                  1
-                </div>
-                <h3 className="text-h3 mt-4 mb-4">Upload Your Documents</h3>
-                <p className="text-body">
-                  Simply upload your resume, cover letter, or any professional
-                  document. Our platform supports PDF, DOC, and other common
-                  formats.
-                </p>
+            <div className="clay-card relative pt-10">
+              <div className="absolute -top-5 left-8 flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#e5c358] to-[#c49d2c] text-base font-black text-[#171717] shadow-[var(--shadow-clay-gold)]">
+                1
               </div>
-            </div>
-
-            {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
-              <div className="text-[var(--color-secondary)] text-4xl">→</div>
+              <h3 className="text-h3 mb-3">Upload Your Documents</h3>
+              <p className="text-body text-sm leading-relaxed">
+                Simply upload your resume, cover letter, or any professional
+                document. Our platform supports PDF format with instant parser
+                analysis.
+              </p>
             </div>
 
             {/* Step 2 */}
-            <div className="relative">
-              <div className="rounded-2xl p-8 border border-[var(--panel-border)] bg-[var(--panel-bg)] h-full">
-                <div className="absolute -top-4 -left-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-[#7a6340] to-[#9b6c4b] text-lg font-bold text-white">
-                  2
-                </div>
-                <h3 className="text-h3 mt-4 mb-4">AI Analysis</h3>
-                <p className="text-body">
-                  Our advanced AI thoroughly analyzes your documents for
-                  quality, impact, and ATS optimization within seconds.
-                </p>
+            <div className="clay-card relative pt-10">
+              <div className="absolute -top-5 left-8 flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#e5c358] to-[#c49d2c] text-base font-black text-[#171717] shadow-[var(--shadow-clay-gold)]">
+                2
               </div>
-            </div>
-
-            {/* Arrow */}
-            <div className="hidden md:flex items-center justify-center">
-              <div className="text-[var(--color-secondary)] text-4xl">→</div>
+              <h3 className="text-h3 mb-3">AI Analysis</h3>
+              <p className="text-body text-sm leading-relaxed">
+                Our advanced AI thoroughly analyzes your documents for quality,
+                impact, and ATS optimization within seconds.
+              </p>
             </div>
 
             {/* Step 3 */}
-            <div className="relative">
-              <div className="rounded-2xl p-8 border border-[var(--panel-border)] bg-[var(--panel-bg)] h-full">
-                <div className="absolute -top-4 -left-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-[#9b6c4b] to-[#b67d57] text-lg font-bold text-white">
-                  3
-                </div>
-                <h3 className="text-h3 mt-4 mb-4">Get Insights & Improve</h3>
-                <p className="text-body">
-                  Receive detailed feedback, actionable recommendations, and a
-                  comprehensive quality score to elevate your professional
-                  documents.
-                </p>
+            <div className="clay-card relative pt-10">
+              <div className="absolute -top-5 left-8 flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-[#e5c358] to-[#c49d2c] text-base font-black text-[#171717] shadow-[var(--shadow-clay-gold)]">
+                3
               </div>
+              <h3 className="text-h3 mb-3">Get Insights & Improve</h3>
+              <p className="text-body text-sm leading-relaxed">
+                Receive detailed feedback, actionable recommendations, and a
+                comprehensive quality score to elevate your professional
+                documents.
+              </p>
             </div>
           </div>
         </div>
       </section>
+
       {/* Features Highlight Section */}
-      <section className="py-24 bg-[var(--card-linen)]">
+      <section className="py-24 bg-[#1a1a1a] border-y border-[rgba(245,230,200,0.06)]">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-h2 text-center mb-20">
+          <h2 className="text-h2 text-center mb-16">
             Powerful Features for Career Success
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="flex gap-4 group">
+              <div className="clay-card-secondary p-5 flex gap-4 group">
                 <div className="flex-shrink-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] transition-transform duration-300 group-hover:scale-110">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(145deg,#292929,#1c1c1c)] shadow-[var(--shadow-clay-sm)] border border-[rgba(245,230,200,0.08)] group-hover:scale-105 transition-transform">
                     <svg
-                      className="h-6 w-6 text-white"
+                      className="h-6 w-6 text-[#d4af37]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -282,19 +278,21 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-h4">Real-time ATS Compatibility</h3>
-                  <p className="text-body mt-2">
+                  <h3 className="text-h4 text-[#f5e6c8]">
+                    Real-time ATS Compatibility
+                  </h3>
+                  <p className="text-body text-sm mt-1">
                     Ensure your documents pass Applicant Tracking Systems with
                     our intelligent keyword optimization.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 group">
+              <div className="clay-card-secondary p-5 flex gap-4 group">
                 <div className="flex-shrink-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#7a6340] to-[#9a7d53] transition-transform duration-300 group-hover:scale-110">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(145deg,#292929,#1c1c1c)] shadow-[var(--shadow-clay-sm)] border border-[rgba(245,230,200,0.08)] group-hover:scale-105 transition-transform">
                     <svg
-                      className="h-6 w-6 text-white"
+                      className="h-6 w-6 text-[#d4af37]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -309,19 +307,21 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-h4">Multi-Dimensional Scoring</h3>
-                  <p className="text-body mt-2">
+                  <h3 className="text-h4 text-[#f5e6c8]">
+                    Multi-Dimensional Scoring
+                  </h3>
+                  <p className="text-body text-sm mt-1">
                     Get evaluated across tone, content quality, structure, and
                     skills alignment for comprehensive improvement.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 group">
+              <div className="clay-card-secondary p-5 flex gap-4 group">
                 <div className="flex-shrink-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#9b6c4b] to-[#b67d57] transition-transform duration-300 group-hover:scale-110">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(145deg,#292929,#1c1c1c)] shadow-[var(--shadow-clay-sm)] border border-[rgba(245,230,200,0.08)] group-hover:scale-105 transition-transform">
                     <svg
-                      className="h-6 w-6 text-white"
+                      className="h-6 w-6 text-[#d4af37]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -336,81 +336,86 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-h4">Smart Recommendations</h3>
-                  <p className="text-body mt-2">
+                  <h3 className="text-h4 text-[#f5e6c8]">
+                    Smart Recommendations
+                  </h3>
+                  <p className="text-body text-sm mt-1">
                     Receive AI-powered suggestions tailored to your profile and
                     career aspirations.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4 group">
-                <div className="flex-shrink-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#6d8a70] to-[#5c7a5f] transition-transform duration-300 group-hover:scale-110">
-                    <svg
-                      className="h-6 w-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-h4">Instant Processing</h3>
-                  <p className="text-body mt-2">
-                    Upload and get comprehensive analysis in seconds, not hours.
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="bg-[var(--panel-bg)] rounded-2xl p-8 border border-[var(--panel-border)]">
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#5c7a5f]/10 rounded-full blur-2xl"></div>
-                <div className="relative z-10 space-y-4">
-                  <div className="bg-[var(--panel-bg)] rounded-xl p-4 border border-[var(--panel-border)]">
-                    <p className="text-caption">Quality Score</p>
-                    <p className="text-h3 mt-2">92/100</p>
+              <div className="clay-card p-8 space-y-4">
+                <div className="clay-card-inset p-5 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs text-[#6b7280] font-bold tracking-wider uppercase">
+                      Quality Score
+                    </p>
+                    <p className="text-2xl font-black text-[#d4af37] mt-1">
+                      92/100
+                    </p>
                   </div>
-                  <div className="bg-[var(--panel-bg)] rounded-xl p-4 border border-[var(--panel-border)]">
-                    <p className="text-caption">ATS Pass Rate</p>
-                    <p className="text-h3 mt-2">98%</p>
+                  <span className="px-3 py-1 rounded-full bg-[rgba(212,175,55,0.15)] text-xs font-bold text-[#d4af37] border border-[rgba(212,175,55,0.3)]">
+                    Elite
+                  </span>
+                </div>
+                <div className="clay-card-inset p-5 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs text-[#6b7280] font-bold tracking-wider uppercase">
+                      ATS Pass Rate
+                    </p>
+                    <p className="text-2xl font-black text-[#d4af37] mt-1">
+                      98%
+                    </p>
                   </div>
-                  <div className="bg-[var(--panel-bg)] rounded-xl p-4 border border-[var(--panel-border)]">
-                    <p className="text-caption">Career Impact</p>
-                    <p className="mt-2 text-h3">Excellent</p>
+                  <span className="px-3 py-1 rounded-full bg-[rgba(212,175,55,0.15)] text-xs font-bold text-[#d4af37] border border-[rgba(212,175,55,0.3)]">
+                    Optimal
+                  </span>
+                </div>
+                <div className="clay-card-inset p-5 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs text-[#6b7280] font-bold tracking-wider uppercase">
+                      Career Impact
+                    </p>
+                    <p className="text-2xl font-black text-[#f5e6c8] mt-1">
+                      Excellent
+                    </p>
                   </div>
+                  <span className="px-3 py-1 rounded-full bg-[rgba(245,230,200,0.1)] text-xs font-bold text-[#f5e6c8] border border-[rgba(245,230,200,0.2)]">
+                    Ready
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       {/* Footer */}
-      <footer className="border-t border-[var(--panel-border)] py-16">
+      <footer className="border-t border-[rgba(245,230,200,0.08)] py-16 bg-[#171717]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <h3 className="text-h4 mb-4">JobPsych</h3>
-              <p className="text-body">
+              <h3 className="text-h4 mb-4 font-bold text-[#f5e6c8]">
+                JobPsych
+              </h3>
+              <p className="text-body text-sm">
                 Empowering professionals to unlock their full potential through
                 intelligent document analysis.
               </p>
             </div>
             <div>
-              <p className="footer-heading mb-4 uppercase">Product</p>
-              <ul className="space-y-2">
+              <p className="footer-heading mb-4 uppercase text-xs font-bold tracking-widest text-[#d4af37]">
+                Product
+              </p>
+              <ul className="space-y-2 text-sm">
                 <li>
                   <a
                     href="#"
-                    className="text-body transition-colors hover:text-[var(--color-link)]"
+                    className="text-[#6b7280] transition-colors hover:text-[#d4af37]"
                   >
                     Features
                   </a>
@@ -418,7 +423,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-body transition-colors hover:text-[var(--color-link)]"
+                    className="text-[#6b7280] transition-colors hover:text-[#d4af37]"
                   >
                     Pricing
                   </a>
@@ -426,7 +431,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-body transition-colors hover:text-[var(--color-link)]"
+                    className="text-[#6b7280] transition-colors hover:text-[#d4af37]"
                   >
                     Security
                   </a>
@@ -434,12 +439,14 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <p className="footer-heading mb-4 uppercase">Company</p>
-              <ul className="space-y-2">
+              <p className="footer-heading mb-4 uppercase text-xs font-bold tracking-widest text-[#d4af37]">
+                Company
+              </p>
+              <ul className="space-y-2 text-sm">
                 <li>
                   <a
                     href="#"
-                    className="text-body transition-colors hover:text-[var(--color-link)]"
+                    className="text-[#6b7280] transition-colors hover:text-[#d4af37]"
                   >
                     About
                   </a>
@@ -447,7 +454,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-body transition-colors hover:text-[var(--color-link)]"
+                    className="text-[#6b7280] transition-colors hover:text-[#d4af37]"
                   >
                     Blog
                   </a>
@@ -455,7 +462,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-body transition-colors hover:text-[var(--color-link)]"
+                    className="text-[#6b7280] transition-colors hover:text-[#d4af37]"
                   >
                     Contact
                   </a>
@@ -463,12 +470,14 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <p className="footer-heading mb-4 uppercase">Legal</p>
-              <ul className="space-y-2">
+              <p className="footer-heading mb-4 uppercase text-xs font-bold tracking-widest text-[#d4af37]">
+                Legal
+              </p>
+              <ul className="space-y-2 text-sm">
                 <li>
                   <a
                     href="#"
-                    className="text-body transition-colors hover:text-[var(--color-link)]"
+                    className="text-[#6b7280] transition-colors hover:text-[#d4af37]"
                   >
                     Privacy
                   </a>
@@ -476,7 +485,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-body transition-colors hover:text-[var(--color-link)]"
+                    className="text-[#6b7280] transition-colors hover:text-[#d4af37]"
                   >
                     Terms
                   </a>
@@ -484,7 +493,7 @@ export default function Home() {
                 <li>
                   <a
                     href="#"
-                    className="text-body transition-colors hover:text-[var(--color-link)]"
+                    className="text-[#6b7280] transition-colors hover:text-[#d4af37]"
                   >
                     Cookie Policy
                   </a>
@@ -493,8 +502,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-[var(--panel-border)] pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-caption text-center md:text-left mb-4 md:mb-0">
+          <div className="border-t border-[rgba(245,230,200,0.06)] pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-caption text-xs text-center md:text-left mb-4 md:mb-0">
               © 2026 JobPsych AI. Your Career Intelligence Assistant. All
               rights reserved.
             </p>

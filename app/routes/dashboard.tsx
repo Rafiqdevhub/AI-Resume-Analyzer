@@ -113,12 +113,11 @@ export default function Dashboard() {
   }
 
   return (
-    <main className="min-h-screen">
-      <div className="relative overflow-hidden border-b border-[var(--panel-border)]">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute -top-28 left-1/4 h-80 w-80 rounded-full bg-[#8fa993]/20 blur-3xl" />
-          <div className="absolute top-28 right-1/4 h-72 w-72 rounded-full bg-[#b79a72]/20 blur-3xl" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(92,122,95,0.10),transparent_45%),radial-gradient(circle_at_80%_25%,rgba(122,99,64,0.12),transparent_40%),linear-gradient(180deg,#e7e2d6_0%,#e2dfd2_80%)]" />
+    <main className="min-h-screen bg-[#171717]">
+      <div className="relative overflow-hidden border-b border-[rgba(245,230,200,0.08)]">
+        <div className="absolute inset-0 -z-10 pointer-events-none">
+          <div className="absolute -top-28 left-1/4 h-80 w-80 rounded-full bg-[#d4af37]/5 blur-3xl" />
+          <div className="absolute top-28 right-1/4 h-72 w-72 rounded-full bg-[#f5e6c8]/3 blur-3xl" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 lg:px-8 lg:pt-12">
@@ -126,10 +125,11 @@ export default function Dashboard() {
             <div className="flex items-start gap-5">
               <Link
                 to="/"
-                className="group mt-1 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[var(--panel-border)] bg-[var(--panel-bg)] shadow-[0_0_0_1px_rgba(122,99,64,0.10)] backdrop-blur-sm transition-all duration-300 hover:-translate-x-0.5 hover:border-[#bca887] hover:bg-[#f4ede1]"
+                className="group mt-1 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[rgba(245,230,200,0.08)] bg-[linear-gradient(145deg,#242424,#1c1c1c)] shadow-[var(--shadow-clay-sm)] transition-all duration-300 hover:-translate-x-1 hover:border-[rgba(212,175,55,0.3)]"
+                title="Back to Home"
               >
                 <svg
-                  className="h-5 w-5 text-[var(--color-body)] transition-all duration-300 group-hover:text-[var(--color-h2)]"
+                  className="h-5 w-5 text-[#dfd0b5] transition-all duration-300 group-hover:text-[#d4af37]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -144,13 +144,13 @@ export default function Dashboard() {
               </Link>
 
               <div>
-                <p className="mb-2 inline-flex items-center rounded-full border border-[var(--card-sand)] bg-[var(--card-primary)] px-3 py-1 text-caption font-semibold uppercase tracking-[0.2em]">
+                <p className="mb-2 inline-flex items-center rounded-full border border-[rgba(245,230,200,0.08)] bg-[linear-gradient(145deg,#242424,#1c1c1c)] px-3.5 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#d4af37] shadow-[var(--shadow-clay-sm)]">
                   Command Center
                 </p>
-                <h1 className="text-h1 drop-shadow-[0_1px_0_rgba(255,255,255,0.2)]">
+                <h1 className="text-h1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
                   Career Documents
                 </h1>
-                <p className="mt-3 max-w-2xl text-body">
+                <p className="mt-3 max-w-2xl text-body text-sm leading-relaxed">
                   A focused workspace to monitor resume quality, track momentum,
                   and navigate your next applications faster.
                 </p>
@@ -159,10 +159,10 @@ export default function Dashboard() {
 
             <Link
               to="/upload"
-              className="group inline-flex items-center gap-3 self-start rounded-2xl border border-[var(--card-clay)] bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] px-6 py-3.5 font-semibold text-[var(--btn-primary-text)] shadow-[0_12px_32px_-16px_rgba(92,122,95,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#507053] hover:to-[#6f5938] hover:shadow-[0_18px_40px_-15px_rgba(92,122,95,0.7)]"
+              className="cta-button self-start text-sm font-bold"
             >
               <svg
-                className="h-5 w-5 transition-transform duration-300 group-hover:rotate-90"
+                className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -170,7 +170,7 @@ export default function Dashboard() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
+                  strokeWidth={2.4}
                   d="M12 4v16m8-8H4"
                 />
               </svg>
@@ -201,39 +201,35 @@ export default function Dashboard() {
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         {loadingResumes && (
-          <div className="rounded-3xl border border-[var(--panel-border)] bg-[var(--panel-bg)] px-6 py-20 text-center backdrop-blur-md md:px-10">
+          <div className="clay-card px-6 py-20 text-center md:px-10">
             <div className="mx-auto mb-8 flex w-fit flex-col items-center">
-              <div className="absolute h-32 w-32 rounded-full blur-2xl" />
               <img
                 src="/images/resume-scan-2.gif"
-                className="relative h-32 w-32 rounded-2xl border border-[var(--panel-border)] object-cover"
+                className="relative h-32 w-32 rounded-3xl border border-[rgba(245,230,200,0.1)] object-cover shadow-[var(--shadow-clay)]"
                 alt="Loading your documents..."
               />
             </div>
             <h3 className="mb-2 text-h3 md:text-h2">
               Loading your documents...
             </h3>
-            <p className="mx-auto max-w-md text-body">
+            <p className="mx-auto max-w-md text-body text-sm">
               We are syncing your collection and preparing the latest insights.
             </p>
             <div className="mt-8 flex justify-center gap-2">
-              <div className="pulse-stagger h-2.5 w-2.5 rounded-full" />
-              <div className="pulse-stagger delay-150 h-2.5 w-2.5 rounded-full" />
-              <div className="pulse-stagger delay-300 h-2.5 w-2.5 rounded-full" />
+              <div className="pulse-stagger h-2.5 w-2.5 rounded-full bg-[#d4af37]" />
+              <div className="pulse-stagger delay-150 h-2.5 w-2.5 rounded-full bg-[#d4af37]" />
+              <div className="pulse-stagger delay-300 h-2.5 w-2.5 rounded-full bg-[#d4af37]" />
             </div>
           </div>
         )}
 
         {!loadingResumes && resumes.length === 0 && (
-          <div className="relative overflow-hidden rounded-3xl border border-[var(--panel-border)] bg-[var(--panel-bg)] px-8 py-24 text-center md:px-12">
-            <div className="absolute right-10 top-8 h-24 w-24 rounded-full border border-[#d8cbb7]" />
-            <div className="absolute bottom-12 left-12 h-16 w-16 rounded-full border border-[#d9c5a2]" />
+          <div className="clay-card px-8 py-24 text-center md:px-12">
             <div className="mx-auto mb-8 flex justify-center">
               <div className="relative">
-                <div className="absolute inset-0 rounded-3xl blur-2xl" />
-                <div className="relative flex h-28 w-28 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5c7a5f] to-[#7a6340] text-white">
+                <div className="relative flex h-24 w-24 items-center justify-center rounded-3xl bg-gradient-to-br from-[#e5c358] to-[#c49d2c] text-[#171717] shadow-[var(--shadow-clay-gold)]">
                   <svg
-                    className="h-14 w-14"
+                    className="h-12 w-12"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -241,27 +237,24 @@ export default function Dashboard() {
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={1.6}
+                      strokeWidth={2}
                       d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                     />
                   </svg>
                 </div>
               </div>
             </div>
-            <h2 className="display-font mb-4 text-h2 md:text-h1">
+            <h2 className="mb-3 text-h2 md:text-h1">
               Build Your First Analysis Set
             </h2>
-            <p className="mx-auto mb-12 max-w-2xl text-lead">
+            <p className="mx-auto mb-10 max-w-xl text-lead text-sm">
               Upload your first resume package to get score breakdowns,
               structural feedback, and job-targeted improvement signals.
             </p>
 
-            <Link
-              to="/upload"
-              className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] px-9 py-4 text-[var(--btn-primary-text)] cta-button-text shadow-[0_20px_42px_-18px_rgba(92,122,95,0.75)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#507053] hover:to-[#6f5938]"
-            >
+            <Link to="/upload" className="cta-button text-sm font-bold">
               <svg
-                className="h-6 w-6"
+                className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -280,24 +273,29 @@ export default function Dashboard() {
 
         {!loadingResumes && resumes.length > 0 && (
           <div className="space-y-8">
-            <div className="rounded-3xl border border-[var(--panel-border)] bg-[var(--panel-bg)] p-5 backdrop-blur-sm md:p-6">
-              <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div className="clay-card-secondary p-5 md:p-6">
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div>
-                  <h2 className="mb-1 text-h2">Your Documents Collection</h2>
-                  <p className="flex items-center gap-2 text-caption">
-                    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[var(--color-accent)]" />
+                  <h2 className="mb-1 text-h2 text-xl font-bold">
+                    Your Documents Collection
+                  </h2>
+                  <p className="flex items-center gap-2 text-xs text-[#6b7280]">
+                    <span className="inline-flex h-2 w-2 rounded-full bg-[#d4af37] animate-pulse" />
                     {resumes.length} document{resumes.length !== 1 ? "s" : ""}{" "}
                     ready for career boost
                   </p>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <label htmlFor="sort-documents" className="text-caption">
+                  <label
+                    htmlFor="sort-documents"
+                    className="text-xs text-[#6b7280] font-semibold uppercase tracking-wider"
+                  >
                     Sort by
                   </label>
                   <select
                     id="sort-documents"
-                    className="rounded-xl border border-[var(--panel-border)] bg-[var(--panel-bg-2)] px-4 py-2.5 text-[var(--color-body)] outline-none transition-all duration-300 hover:border-[#c5b59a] focus:border-[var(--color-link)] focus:ring-2 focus:ring-[#b79a72]/30"
+                    className="rounded-2xl border border-[rgba(245,230,200,0.08)] bg-[linear-gradient(145deg,#181818,#1d1d1d)] shadow-[var(--shadow-clay-inset)] px-4 py-2.5 text-sm text-[#f5e6c8] outline-none transition-all duration-200 focus:border-[#d4af37]/40 cursor-pointer"
                     aria-label="Sort documents by"
                     value={sortBy}
                     onChange={(event) =>
@@ -306,9 +304,24 @@ export default function Dashboard() {
                       )
                     }
                   >
-                    <option value="recent">Most Recent</option>
-                    <option value="score">Highest Score</option>
-                    <option value="company">Company A-Z</option>
+                    <option
+                      value="recent"
+                      className="bg-[#1a1a1a] text-[#f5e6c8]"
+                    >
+                      Most Recent
+                    </option>
+                    <option
+                      value="score"
+                      className="bg-[#1a1a1a] text-[#f5e6c8]"
+                    >
+                      Highest Score
+                    </option>
+                    <option
+                      value="company"
+                      className="bg-[#1a1a1a] text-[#f5e6c8]"
+                    >
+                      Company A-Z
+                    </option>
                   </select>
                 </div>
               </div>
@@ -326,12 +339,7 @@ export default function Dashboard() {
                         : "delay-240"
                   }`}
                 >
-                  <div className="relative rounded-2xl">
-                    <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-[#5c7a5f]/0 via-[#5c7a5f]/20 to-[#7a6340]/0 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
-                    <div className="relative">
-                      <ResumeCard resume={resume} />
-                    </div>
-                  </div>
+                  <ResumeCard resume={resume} />
                 </div>
               ))}
             </div>
@@ -343,7 +351,7 @@ export default function Dashboard() {
         @keyframes revealCard {
           from {
             opacity: 0;
-            transform: translateY(20px) scale(0.985);
+            transform: translateY(16px) scale(0.99);
           }
           to {
             opacity: 1;
@@ -361,42 +369,6 @@ export default function Dashboard() {
             opacity: 1;
             transform: translateY(-4px);
           }
-        }
-
-        .dash-stat-card {
-          border: 1px solid var(--panel-border);
-          background: var(--panel-bg);
-          border-radius: 1rem;
-          padding: 1.1rem 1.2rem;
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03),
-            0 18px 40px -28px rgba(122, 99, 64, 0.42);
-          transition: transform 240ms ease, border-color 240ms ease;
-        }
-
-        .dash-stat-card:hover {
-          transform: translateY(-2px);
-          border-color: rgba(122, 99, 64, 0.45);
-        }
-
-        .dash-stat-label {
-          color: var(--color-secondary);
-          font-size: 0.78rem;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          margin-bottom: 0.35rem;
-          font-weight: 700;
-        }
-
-        .dash-stat-value {
-          color: var(--color-h2);
-          font-size: 1.9rem;
-          font-weight: 850;
-          line-height: 1;
-          font-family: "Sora", "Manrope", sans-serif;
-        }
-
-        .display-font {
-          font-family: "Sora", "Manrope", sans-serif;
         }
 
         .reveal-card {
@@ -426,6 +398,15 @@ export default function Dashboard() {
 
         .delay-240 {
           animation-delay: 240ms;
+        }
+
+        #sort-documents {
+          color-scheme: dark;
+        }
+
+        #sort-documents option {
+          background-color: #1a1a1a !important;
+          color: #f5e6c8 !important;
         }
       `}</style>
     </main>

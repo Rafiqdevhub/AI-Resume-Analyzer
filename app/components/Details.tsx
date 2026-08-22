@@ -10,31 +10,20 @@ const ScoreBadge = ({ score }: { score: number }) => {
   return (
     <div
       className={cn(
-        "flex flex-row items-center gap-1 rounded-[96px] px-2 py-0.5",
+        "flex flex-row items-center gap-1.5 rounded-full px-3 py-1 border shadow-[var(--shadow-clay-sm)]",
         score > 69
-          ? "bg-[color:var(--color-accent)]/12"
+          ? "border-[#d4af37]/30 bg-[rgba(212,175,55,0.12)] text-[#d4af37]"
           : score > 39
-            ? "bg-[color:var(--color-link)]/12"
-            : "bg-[color:var(--color-h3)]/12",
+            ? "border-[rgba(245,230,200,0.15)] bg-[rgba(245,230,200,0.06)] text-[#f5e6c8]"
+            : "border-[#fca5a5]/30 bg-[rgba(252,165,165,0.08)] text-[#fca5a5]",
       )}
     >
       <img
         src={score > 69 ? "/icons/check.svg" : "/icons/warning.svg"}
         alt="score"
-        className="size-4"
+        className="size-3.5"
       />
-      <p
-        className={cn(
-          "text-sm font-medium",
-          score > 69
-            ? "text-[var(--color-accent)]"
-            : score > 39
-              ? "text-[var(--color-link)]"
-              : "text-[var(--color-h3)]",
-        )}
-      >
-        {score}/100
-      </p>
+      <p className="text-xs font-bold">{score}/100</p>
     </div>
   );
 };
@@ -48,7 +37,7 @@ const CategoryHeader = ({
 }) => {
   return (
     <div className="flex flex-row gap-4 items-center py-2">
-      <p className="text-2xl font-semibold text-[var(--color-h2)]">{title}</p>
+      <p className="text-xl font-bold text-[#f5e6c8]">{title}</p>
       <ScoreBadge score={categoryScore} />
     </div>
   );
@@ -60,33 +49,33 @@ const CategoryContent = ({
   tips: { type: "good" | "improve"; tip: string; explanation: string }[];
 }) => {
   return (
-    <div className="flex flex-col gap-4 items-center w-full">
-      <div className="grid w-full grid-cols-2 gap-4 rounded-lg border border-[var(--panel-border)] bg-[var(--panel-bg-2)] px-5 py-4">
+    <div className="flex flex-col gap-4 items-center w-full pt-2">
+      <div className="grid w-full grid-cols-1 md:grid-cols-2 gap-3 rounded-2xl border border-[rgba(245,230,200,0.08)] bg-[linear-gradient(145deg,#181818,#1d1d1d)] shadow-[var(--shadow-clay-inset-sm)] px-5 py-4">
         {tips.map((tip, index) => (
-          <div className="flex flex-row gap-2 items-center" key={index}>
+          <div className="flex flex-row gap-2.5 items-center" key={index}>
             <img
               src={
                 tip.type === "good" ? "/icons/check.svg" : "/icons/warning.svg"
               }
               alt="score"
-              className="size-5"
+              className="size-4 shrink-0"
             />
-            <p className="text-xl text-[var(--color-body)]">{tip.tip}</p>
+            <p className="text-xs font-medium text-[#dfd0b5]">{tip.tip}</p>
           </div>
         ))}
       </div>
-      <div className="flex flex-col gap-4 w-full">
+      <div className="flex flex-col gap-3 w-full">
         {tips.map((tip, index) => (
           <div
             key={index + tip.tip}
             className={cn(
-              "flex flex-col gap-2 rounded-2xl border p-4",
+              "flex flex-col gap-1.5 rounded-2xl border p-4 shadow-[var(--shadow-clay-sm)] transition-all",
               tip.type === "good"
-                ? "border-[color:var(--color-accent)]/20 bg-[color:var(--color-accent)]/10 text-[var(--color-accent)]"
-                : "border-[var(--panel-border)] bg-[var(--panel-bg)] text-[var(--color-h3)]",
+                ? "border-[#d4af37]/20 bg-[linear-gradient(145deg,#242424,#1a1a1a)]"
+                : "border-[rgba(245,230,200,0.07)] bg-[linear-gradient(145deg,#222222,#191919)]",
             )}
           >
-            <div className="flex flex-row gap-2 items-center">
+            <div className="flex flex-row gap-2.5 items-center">
               <img
                 src={
                   tip.type === "good"
@@ -94,13 +83,11 @@ const CategoryContent = ({
                     : "/icons/warning.svg"
                 }
                 alt="score"
-                className="size-5"
+                className="size-4"
               />
-              <p className="text-xl font-semibold text-[var(--color-h2)]">
-                {tip.tip}
-              </p>
+              <p className="text-sm font-bold text-[#f5e6c8]">{tip.tip}</p>
             </div>
-            <p className="opacity-90 text-[var(--color-body)]">
+            <p className="text-xs text-[#6b7280] pl-6.5 leading-relaxed">
               {tip.explanation}
             </p>
           </div>
@@ -112,7 +99,10 @@ const CategoryContent = ({
 
 const Details = ({ feedback }: { feedback: Feedback }) => {
   return (
-    <div className="flex flex-col gap-4 w-full">
+    <div className="clay-card p-6 w-full space-y-2">
+      <h3 className="text-xl font-bold text-[#f5e6c8] mb-4">
+        Detailed Breakdown
+      </h3>
       <Accordion>
         <AccordionItem id="tone-style">
           <AccordionHeader itemId="tone-style">

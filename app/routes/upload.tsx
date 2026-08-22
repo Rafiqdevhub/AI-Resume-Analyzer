@@ -110,40 +110,42 @@ const Upload = () => {
   };
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#171717]">
       <Navbar />
-      <section className="main-section py-16">
+      <section className="main-section py-12">
         <div className="page-heading max-w-4xl mx-auto px-4">
           <div className="mb-8">
             {isProcessing ? (
               <>
-                <div className="inline-flex items-center justify-center gap-2 mb-6 px-4 py-2 rounded-full border backdrop-blur-sm bg-[var(--card-primary)] border-[var(--card-sand)]">
-                  <span className="w-2 h-2 rounded-full animate-pulse bg-[var(--color-accent)]"></span>
-                  <span className="text-caption font-semibold">
+                <div className="inline-flex items-center justify-center gap-2 mb-6 px-4 py-2 rounded-full border border-[rgba(245,230,200,0.08)] bg-[linear-gradient(145deg,#242424,#1c1c1c)] shadow-[var(--shadow-clay-sm)]">
+                  <span className="w-2 h-2 rounded-full animate-pulse bg-[#d4af37] shadow-[0_0_6px_#d4af37]"></span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#f5e6c8]">
                     Document Analysis in Progress
                   </span>
                 </div>
-                <h1 className="text-h1 mb-6 drop-shadow-[0_1px_0_rgba(255,255,255,0.2)]">
+                <h1 className="text-h1 mb-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
                   {statusText}
                 </h1>
-                <img
-                  src="/images/resume-scan.gif"
-                  className="w-full rounded-xl shadow-lg mt-8"
-                  alt="JobPsych AI analyzing your document"
-                />
+                <div className="clay-card p-4 mt-6">
+                  <img
+                    src="/images/resume-scan.gif"
+                    className="w-full rounded-2xl shadow-[var(--shadow-clay-inset-sm)]"
+                    alt="JobPsych AI analyzing your document"
+                  />
+                </div>
               </>
             ) : (
               <>
-                <div className="inline-flex items-center justify-center gap-2 mb-6 px-4 py-2 rounded-full border backdrop-blur-sm bg-[var(--card-primary)] border-[var(--card-sand)]">
-                  <span className="w-2 h-2 rounded-full animate-pulse bg-[var(--color-accent)]"></span>
-                  <span className="text-caption font-semibold">
+                <div className="inline-flex items-center justify-center gap-2 mb-6 px-4 py-2 rounded-full border border-[rgba(245,230,200,0.08)] bg-[linear-gradient(145deg,#242424,#1c1c1c)] shadow-[var(--shadow-clay-sm)]">
+                  <span className="w-2 h-2 rounded-full animate-pulse bg-[#d4af37] shadow-[0_0_6px_#d4af37]"></span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#f5e6c8]">
                     Document Quality Improvement
                   </span>
                 </div>
-                <h1 className="text-h1 drop-shadow-[0_1px_0_rgba(255,255,255,0.2)]">
+                <h1 className="text-h1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
                   Improve Your Documents with AI
                 </h1>
-                <p className="text-lead mb-4">
+                <p className="text-lead mt-3 mb-4 text-sm">
                   Share your document with our AI assistant and get detailed
                   feedback on content quality, clarity, structure, ATS
                   readiness, and actionable recommendations.
@@ -155,13 +157,13 @@ const Upload = () => {
             <form
               id="upload-form"
               onSubmit={handleSubmit}
-              className="mt-12 space-y-6"
+              className="mt-8 space-y-6"
             >
               {/* Company Information Section */}
-              <div className="rounded-2xl p-8 border backdrop-blur-sm bg-[var(--panel-bg)] border-[var(--panel-border)]">
-                <h3 className="text-h4 mb-6 flex items-center gap-2">
+              <div className="clay-card p-6 md:p-8">
+                <h3 className="text-h4 mb-6 flex items-center gap-2 font-bold text-[#f5e6c8]">
                   <svg
-                    className="w-5 h-5 text-[var(--color-accent)]"
+                    className="w-5 h-5 text-[#d4af37]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -179,7 +181,7 @@ const Upload = () => {
                   <div className="form-div">
                     <label
                       htmlFor="company-name"
-                      className="text-[var(--color-caption)] font-semibold"
+                      className="text-xs font-bold uppercase tracking-wider text-[#6b7280]"
                     >
                       Company Name
                     </label>
@@ -188,16 +190,16 @@ const Upload = () => {
                       name="company-name"
                       placeholder="e.g., Google, Microsoft, Amazon, Tesla"
                       id="company-name"
-                      className="w-full rounded-lg border border-[var(--panel-border)] bg-[var(--panel-bg)] px-4 py-3 text-[var(--color-body)] transition-colors placeholder:text-[var(--color-secondary)] focus:border-[var(--color-accent)] focus:outline-none"
+                      className="w-full text-sm"
                     />
-                    <p className="text-caption mt-1">
+                    <p className="text-xs text-[#6b7280] mt-1">
                       The target company helps personalize the analysis.
                     </p>
                   </div>
                   <div className="form-div">
                     <label
                       htmlFor="job-title"
-                      className="text-[var(--color-caption)] font-semibold"
+                      className="text-xs font-bold uppercase tracking-wider text-[#6b7280]"
                     >
                       Target Role
                     </label>
@@ -206,9 +208,9 @@ const Upload = () => {
                       name="job-title"
                       placeholder="e.g., Senior Software Engineer, Product Manager, Data Scientist"
                       id="job-title"
-                      className="w-full rounded-lg border border-[var(--panel-border)] bg-[var(--panel-bg)] px-4 py-3 text-[var(--color-body)] transition-colors placeholder:text-[var(--color-secondary)] focus:border-[var(--color-accent)] focus:outline-none"
+                      className="w-full text-sm"
                     />
-                    <p className="text-caption mt-1">
+                    <p className="text-xs text-[#6b7280] mt-1">
                       The role you're targeting helps tailor the feedback.
                     </p>
                   </div>
@@ -216,10 +218,10 @@ const Upload = () => {
               </div>
 
               {/* Job Description Section */}
-              <div className="rounded-2xl p-8 border backdrop-blur-sm bg-[var(--panel-bg)] border-[var(--panel-border)]">
-                <h3 className="text-h4 mb-6 flex items-center gap-2">
+              <div className="clay-card p-6 md:p-8">
+                <h3 className="text-h4 mb-6 flex items-center gap-2 font-bold text-[#f5e6c8]">
                   <svg
-                    className="w-5 h-5 text-[var(--color-link)]"
+                    className="w-5 h-5 text-[#d4af37]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -236,7 +238,7 @@ const Upload = () => {
                 <div className="form-div">
                   <label
                     htmlFor="job-description"
-                    className="text-[var(--color-caption)] font-semibold"
+                    className="text-xs font-bold uppercase tracking-wider text-[#6b7280]"
                   >
                     Target Content Context
                   </label>
@@ -245,9 +247,9 @@ const Upload = () => {
                     name="job-description"
                     placeholder="Paste the complete job posting here. Include all requirements, responsibilities, skills, qualifications, and key competencies. The more details provided, the more accurate our analysis will be."
                     id="job-description"
-                    className="w-full resize-none rounded-lg border border-[var(--panel-border)] bg-[var(--panel-bg)] px-4 py-3 text-[var(--color-body)] transition-colors placeholder:text-[var(--color-secondary)] focus:border-[var(--color-link)] focus:outline-none"
+                    className="w-full text-sm resize-none"
                   />
-                  <p className="text-caption mt-1">
+                  <p className="text-xs text-[#6b7280] mt-1">
                     Paste the complete job description so we can compare your
                     document against the target content and highlight gaps.
                   </p>
@@ -255,10 +257,10 @@ const Upload = () => {
               </div>
 
               {/* Document Upload Section */}
-              <div className="rounded-2xl p-8 border backdrop-blur-sm bg-[var(--panel-bg)] border-[var(--panel-border)]">
-                <h3 className="text-h4 mb-6 flex items-center gap-2">
+              <div className="clay-card p-6 md:p-8">
+                <h3 className="text-h4 mb-6 flex items-center gap-2 font-bold text-[#f5e6c8]">
                   <svg
-                    className="w-5 h-5 text-[var(--color-accent)]"
+                    className="w-5 h-5 text-[#d4af37]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -275,12 +277,12 @@ const Upload = () => {
                 <div className="form-div">
                   <label
                     htmlFor="uploader"
-                    className="text-[var(--color-caption)] font-semibold block mb-3"
+                    className="text-xs font-bold uppercase tracking-wider text-[#6b7280] block mb-2"
                   >
                     Document File
                   </label>
                   <FileUploader onFileSelect={handleFileSelect} />
-                  <p className="text-caption mt-3">
+                  <p className="text-xs text-[#6b7280] mt-2">
                     Supports PDF format. Our AI will analyze content quality,
                     ATS readiness, keyword alignment, and provide personalized
                     recommendations.
@@ -289,7 +291,7 @@ const Upload = () => {
               </div>
 
               <button
-                className="w-full py-4 px-6 bg-gradient-to-r from-[#5c7a5f] to-[#7a6340] hover:from-[#507053] hover:to-[#6f5938] text-[var(--btn-primary-text)] cta-button-text rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl cursor-pointer flex items-center justify-center gap-2"
+                className="cta-button w-full text-base font-bold justify-center"
                 type="submit"
               >
                 <svg
@@ -301,7 +303,7 @@ const Upload = () => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth={2.4}
                     d="M13 10V3L4 14h7v7l9-11h-7z"
                   />
                 </svg>

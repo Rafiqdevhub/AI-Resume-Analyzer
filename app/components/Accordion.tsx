@@ -55,7 +55,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     <AccordionContext.Provider
       value={{ activeItems, toggleItem, isItemActive }}
     >
-      <div className={`space-y-2 ${className}`}>{children}</div>
+      <div className={`space-y-3 ${className}`}>{children}</div>
     </AccordionContext.Provider>
   );
 };
@@ -73,7 +73,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
 }) => {
   return (
     <div
-      className={`overflow-hidden border-b border-[var(--panel-border)] ${className}`}
+      className={`overflow-hidden rounded-2xl border border-[rgba(245,230,200,0.08)] bg-[linear-gradient(145deg,#242424,#1b1b1b)] shadow-[var(--shadow-clay-sm)] transition-all ${className}`}
     >
       {children}
     </div>
@@ -100,11 +100,14 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
 
   const defaultIcon = (
     <svg
-      className={cn("w-5 h-5 transition-transform duration-200", {
-        "rotate-180": isActive,
-      })}
+      className={cn(
+        "w-5 h-5 text-[#d4af37] transition-transform duration-200",
+        {
+          "rotate-180": isActive,
+        },
+      )}
       fill="none"
-      stroke="var(--color-secondary)"
+      stroke="currentColor"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -125,9 +128,10 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
     <button
       onClick={handleClick}
       className={`
-        w-full px-4 py-3 text-left
+        w-full px-5 py-4 text-left
         focus:outline-none
-        transition-colors duration-200 flex items-center justify-between cursor-pointer text-[var(--color-h2)]
+        transition-colors duration-200 flex items-center justify-between cursor-pointer text-[#f5e6c8]
+        hover:bg-[rgba(245,230,200,0.02)]
         ${className}
       `}
     >
@@ -158,11 +162,11 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({
     <div
       className={`
         overflow-hidden transition-all duration-300 ease-in-out
-        ${isActive ? "max-h-fit opacity-100" : "max-h-0 opacity-0"}
+        ${isActive ? "max-h-fit opacity-100 border-t border-[rgba(245,230,200,0.06)]" : "max-h-0 opacity-0"}
         ${className}
       `}
     >
-      <div className="px-4 py-3 text-[var(--color-body)]">{children}</div>
+      <div className="px-5 py-4 text-[var(--color-body)]">{children}</div>
     </div>
   );
 };

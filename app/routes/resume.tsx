@@ -53,33 +53,42 @@ const Resume = () => {
   }, [id]);
 
   return (
-    <main className="!pt-0">
-      <nav className="resume-nav justify-start">
+    <main className="!pt-0 bg-[#171717] min-h-screen">
+      <nav className="resume-nav justify-start border-b border-[rgba(245,230,200,0.08)] bg-[linear-gradient(145deg,#242424,#1c1c1c)] px-6 py-4 shadow-[var(--shadow-clay-sm)]">
         <Link to="/dashboard" className="back-button">
           <img
             src="/icons/back.svg"
             alt="logo"
-            className="w-2.5 h-2.5 opacity-80"
+            className="w-3 h-3 invert opacity-80"
           />
-          <span className="text-caption font-semibold">Back to Dashboard</span>
+          <span className="text-xs font-bold text-[#f5e6c8]">
+            Back to Dashboard
+          </span>
         </Link>
       </nav>
       <div className="flex flex-row w-full max-lg:flex-col-reverse">
-        <section className="feedback-section h-[100vh] sticky top-0 items-center justify-center">
+        <section className="feedback-section h-[100vh] sticky top-0 items-center justify-center p-6">
           {imageUrl && resumeUrl && (
-            <div className="animate-in fade-in duration-1000 gradient-border max-sm:m-0 h-[90%] max-wxl:h-fit w-fit">
-              <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
+            <div className="animate-in fade-in duration-1000 clay-card max-sm:m-0 h-[90%] max-wxl:h-fit w-fit p-3">
+              <a
+                href={resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
                 <img
                   src={imageUrl}
-                  className="w-full h-full object-contain rounded-2xl"
-                  title="documents"
+                  className="w-full h-full object-contain rounded-2xl border border-[rgba(245,230,200,0.08)]"
+                  title="Click to open original document"
                 />
               </a>
             </div>
           )}
         </section>
-        <section className="feedback-section">
-          <h2 className="text-h2">JobPsych AI Career Intelligence Report</h2>
+        <section className="feedback-section p-6 md:p-8">
+          <h2 className="text-h2 mb-6 font-bold text-[#f5e6c8]">
+            JobPsych AI Career Intelligence Report
+          </h2>
           {feedback ? (
             <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
               <Summary feedback={feedback} />
@@ -90,11 +99,13 @@ const Resume = () => {
               <Details feedback={feedback} />
             </div>
           ) : (
-            <img
-              src="/images/resume-scan-2.gif"
-              className="w-full"
-              alt="Analyzing your documents..."
-            />
+            <div className="clay-card p-8 text-center">
+              <img
+                src="/images/resume-scan-2.gif"
+                className="w-full rounded-2xl shadow-[var(--shadow-clay-inset-sm)]"
+                alt="Analyzing your documents..."
+              />
+            </div>
           )}
         </section>
       </div>

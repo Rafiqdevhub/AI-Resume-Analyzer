@@ -24,8 +24,8 @@ const ScoreGauge = ({ score = 75 }: { score: number }) => {
               x2="100%"
               y2="0%"
             >
-              <stop offset="0%" stopColor="#5c7a5f" />
-              <stop offset="100%" stopColor="#7a6340" />
+              <stop offset="0%" stopColor="#e5c358" />
+              <stop offset="100%" stopColor="#c49d2c" />
             </linearGradient>
           </defs>
 
@@ -33,7 +33,7 @@ const ScoreGauge = ({ score = 75 }: { score: number }) => {
           <path
             d="M10,50 A40,40 0 0,1 90,50"
             fill="none"
-            stroke="rgba(15, 23, 42, 0.16)"
+            stroke="rgba(245, 230, 200, 0.08)"
             strokeWidth="10"
             strokeLinecap="round"
           />
@@ -52,7 +52,7 @@ const ScoreGauge = ({ score = 75 }: { score: number }) => {
         </svg>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center pt-2">
-          <div className="text-xl font-semibold pt-4 text-[var(--color-h2)]">
+          <div className="text-xl font-bold pt-4 text-[#f5e6c8]">
             {score}/100
           </div>
         </div>

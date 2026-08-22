@@ -31,33 +31,69 @@ const WipeApp = () => {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <main className="min-h-screen bg-[#171717] flex items-center justify-center p-6">
+        <div className="clay-card p-8 text-center text-[#f5e6c8]">
+          Loading...
+        </div>
+      </main>
+    );
   }
 
   if (error) {
-    return <div>Error {error}</div>;
+    return (
+      <main className="min-h-screen bg-[#171717] flex items-center justify-center p-6">
+        <div className="clay-card p-8 text-center text-[#fca5a5]">
+          Error: {error}
+        </div>
+      </main>
+    );
   }
 
   return (
-    <div>
-      Authenticated as: {auth.user?.username}
-      <div>Existing files:</div>
-      <div className="flex flex-col gap-4">
-        {files.map((file) => (
-          <div key={file.id} className="flex flex-row gap-4">
-            <p>{file.name}</p>
+    <main className="min-h-screen bg-[#171717] p-8 flex items-center justify-center">
+      <div className="clay-card max-w-lg w-full p-8 flex flex-col gap-6">
+        <h2 className="text-h3 font-bold text-[#f5e6c8]">
+          App Data Management
+        </h2>
+        <p className="text-xs text-[#6b7280]">
+          Authenticated as:{" "}
+          <span className="font-bold text-[#f5e6c8]">
+            {auth.user?.username}
+          </span>
+        </p>
+
+        <div>
+          <p className="text-xs font-bold uppercase tracking-wider text-[#6b7280] mb-3">
+            Existing Files ({files.length}):
+          </p>
+          <div className="flex flex-col gap-2 max-h-60 overflow-y-auto pr-2">
+            {files.map((file) => (
+              <div
+                key={file.id}
+                className="clay-card-inset p-3 text-xs text-[#dfd0b5] truncate"
+              >
+                {file.name}
+              </div>
+            ))}
+            {files.length === 0 && (
+              <p className="text-xs text-[#6b7280] italic">
+                No files in directory
+              </p>
+            )}
           </div>
-        ))}
+        </div>
+
+        <div className="pt-2">
+          <button
+            className="w-full py-3.5 rounded-2xl bg-[linear-gradient(145deg,#8c3a2a,#6d2b1f)] text-[#fce8e4] font-bold text-sm shadow-[var(--shadow-clay-sm)] hover:bg-[linear-gradient(145deg,#9c4331,#7c3224)] active:shadow-[var(--shadow-clay-inset)] active:scale-[0.98] transition-all cursor-pointer"
+            onClick={() => handleDelete()}
+          >
+            Wipe App Data
+          </button>
+        </div>
       </div>
-      <div>
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer"
-          onClick={() => handleDelete()}
-        >
-          Wipe App Data
-        </button>
-      </div>
-    </div>
+    </main>
   );
 };
 
